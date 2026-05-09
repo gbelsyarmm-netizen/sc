@@ -1,0 +1,4340 @@
+<!DOCTYPE html>
+<html lang="sd" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ================== START SEO META TAGS ================== -->
+    <title>
+        Sindhi School Leaving Certificate Maker Online – PDF Generator Tool | Learn4Test
+    </title>
+    <meta name="description"
+        content="Generate and download professional Sindhi School Leaving Certificates (SLC) online. Fast, completely free PDF generator tool tailored for schools, teachers, and headmasters in Sindh. Powered by Learn4test.com." />
+    <meta name="keywords"
+        content="Sindhi School Leaving Certificate Maker Online, PDF Generator Tool, SLC Maker Sindh, School Certificate Generator, Learn4Test, Sindhi Education Tools, Online Certificate PDF, Primary School Leaving Certificate format in Sindhi, Headmaster Tool Sindh" />
+    <meta name="author" content="Learn4Test.com" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://learn4test.com/school/sindhi-leaving-certificate-maker.php" />
+    <!-- Open Graph Meta Tags (Facebook, WhatsApp Sharing) -->
+    <meta property="og:title" content="Sindhi School Leaving Certificate Maker Online – PDF Generator Tool" />
+    <meta property="og:description"
+        content="Generate high-quality Sindhi School Leaving Certificates online in just one click. Free PDF tool exclusively for Sindh's teachers by Learn4Test." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://learn4test.com/school/sindhi-leaving-certificate-maker.php" />
+    <meta property="og:site_name" content="Learn4Test" />
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sindhi School Leaving Certificate Maker Online" />
+    <meta name="twitter:description"
+        content="Create professional Sindhi School Leaving Certificates online easily. Generate PDF for free on Learn4Test.com" />
+    <!-- Structured Data (Schema.org) to tell Google this is a Web Tool -->
+    <script type="application/ld+json">
+      {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Sindhi School Leaving Certificate Maker Online",
+      "url": "https://learn4test.com/school/sindhi-leaving-certificate-maker.php",
+      "description": "An online PDF generator tool specifically designed to create Sindhi language School Leaving Certificates (SLC) for educational institutions in Sindh.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "PKR"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Learn4Test",
+        "url": "https://learn4test.com"
+      }
+    }
+    </script>
+    <!-- ================== END SEO META TAGS ================== -->
+    <!-- Core Web Fallback Font for Sindhi (Lateef) as Backup -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Lateef:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400..700&family=Noto+Sans+Arabic:wght@100..900&family=Scheherazade+New:wght@400;700&family=Gulzar&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- CSS Styling -->
+    <style>
+        /* ================= RESET & CORE VARIABLES ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            max-width: 100vw;
+            overflow-x: hidden;
+            background-color: #f0f2f5;
+        }
+
+        :root {
+            /* Shared Variables */
+            --pen-blue: #0b1a80;
+            --paper-bg: #fdfdf9;
+            --font-choice: 'MB Sindhi', 'Lateef', serif;
+            --font-sindhi: var(--font-choice), 'MB Sindhi', 'Lateef', Tahoma, Arial, sans-serif;
+            --font-date: 'Times New Roman', Georgia, serif;
+            --font-ui: 'Inter', 'Lateef', sans-serif;
+            --scale: 1;
+
+            /* Classic Theme Variables */
+            --cert-primary: #701626;
+            --cert-secondary: #D4AF37;
+            --bg-gold-light: rgba(212, 175, 55, 0.15);
+            --border-pattern: repeating-linear-gradient(135deg, var(--cert-primary) 0, var(--cert-primary) calc(4px * var(--scale)), var(--cert-secondary) calc(4px * var(--scale)), var(--cert-secondary) calc(6px * var(--scale)), transparent calc(6px * var(--scale)), transparent calc(12px * var(--scale)));
+
+            /* Editor UI Variables */
+            --editor-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --text-main: #1e293b;
+            --primary-color: #701626;
+            --focus-ring: rgba(112, 22, 38, 0.12);
+        }
+
+        body {
+            font-family: var(--font-sindhi);
+            min-height: 100vh;
+            color: var(--text-main);
+            padding-top: 200px;
+            background: linear-gradient(135deg, #f0f4ff, #e0e8ff);
+            overflow-x: hidden;
+        }
+
+        /* ================= FULL BLEED HEADER BANNER ================= */
+        .top-header-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-bottom: 4px solid var(--cert-secondary);
+            overflow: hidden;
+        }
+
+        .top-header-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+            animation: rotate 20s infinite linear;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .top-header-banner h1 {
+            color: #ffffff;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 10px rgba(37, 99, 235, 0.5);
+            line-height: 1.2;
+        }
+
+        .top-header-banner p {
+            color: var(--cert-secondary);
+            font-size: 18px;
+            font-family: var(--font-sindhi);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* ================= CHROME NOTICE MODAL ================= */
+        .chrome-notice-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            z-index: 10000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .chrome-notice-box {
+            background: #ffffff;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 550px;
+            padding: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            direction: rtl;
+            font-family: var(--font-sindhi);
+            border-top: 5px solid #10b981;
+            position: relative;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .chrome-notice-title {
+            font-size: 24px;
+            color: #1e3a8a;
+            font-weight: 800;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .chrome-notice-content {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #334155;
+        }
+
+        .chrome-notice-content strong {
+            color: #10b981;
+        }
+
+        .copy-link-box {
+            background: #f8fafc;
+            padding: 6px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            direction: ltr;
+            margin: 10px 0;
+            border: 1px solid #cbd5e1;
+        }
+
+        .copy-link-box input {
+            flex-grow: 1;
+            border: none;
+            background: transparent;
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: #475569;
+            outline: none;
+            padding: 4px;
+            width: 100%;
+        }
+
+        .copy-link-box button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-family: var(--font-sindhi);
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+
+        .copy-link-box button:hover {
+            background: #2563eb;
+        }
+
+        .btn-chrome {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white !important;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-family: var(--font-ui);
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+            transition: 0.2s;
+            direction: ltr;
+            margin: 8px 0;
+        }
+
+        .btn-chrome:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-understand {
+            display: block;
+            width: 100%;
+            background: #1e293b;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-family: var(--font-sindhi);
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.2s;
+            box-shadow: 0 4px 10px rgba(30, 41, 59, 0.2);
+        }
+
+        .btn-understand:hover {
+            background: #0f172a;
+            transform: translateY(-2px);
+        }
+
+        /* Custom Toast Notification */
+        .custom-toast {
+            position: fixed;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            background: #10b981;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-family: var(--font-sindhi);
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            text-align: center;
+        }
+
+        .custom-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ================= PREMIUM UI ENHANCEMENTS ================= */
+        .app-container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px 5%;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ui-form {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 32px;
+            padding: 60px 5%;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+            direction: rtl;
+            width: 100%;
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-section {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .form-section:hover {
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* New Header Styling for Form Sections */
+        .form-section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .header-line {
+            flex-grow: 1;
+            height: 2px;
+            background: var(--border-color);
+        }
+
+        .section-title {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 0;
+        }
+
+        .edit-btn-small {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            background: #f8fafc;
+            color: #3b82f6;
+            border: 2px solid #bfdbfe;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: var(--font-ui);
+            white-space: nowrap;
+            direction: ltr;
+        }
+
+        .edit-btn-small:hover {
+            background: #eff6ff;
+            color: #1d4ed8;
+            border-color: #93c5fd;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        /* Elegant Inputs */
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .input-group label {
+            font-size: 28px;
+            font-weight: 800;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .input-group input[type="
+        text"
+        ],
+        .input-group input[type="
+        number"
+        ],
+        .input-group input[type="
+        email"
+
+        ],
+        .input-group select {
+            width: 100%;
+            max-width: 100%;
+            min-height: 60px;
+            padding: 10px 20px;
+            border: 2px solid var(--border-color);
+            border-radius: 14px;
+            font-size: 26px;
+            font-family: var(--font-sindhi);
+            font-weight: 600;
+            color: var(--text-main);
+            background-color: #f8fafc;
+            transition: all 0.2s ease;
+        }
+
+        .input-group input:hover,
+        .input-group select:hover {
+            border-color: #cbd5e1;
+            background-color: #ffffff;
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background-color: #ffffff;
+            box-shadow: 0 0 0 5px var(--focus-ring);
+        }
+
+        .input-group input.ltr {
+            direction: ltr;
+            text-align: left;
+            font-family: var(--font-ui);
+            font-size: 18px;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .split-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .date-group {
+            display: grid;
+            grid-template-columns: 100px 1fr 120px;
+            gap: 15px;
+            direction: rtl;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .date-group input[type="
+        number"
+
+        ] {
+            font-family: var(--font-ui);
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Step Actions & Buttons */
+        .step-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            justify-content: flex-end;
+            border-top: 2px dashed #e2e8f0;
+            padding-top: 25px;
+        }
+
+        .action-btn {
+            padding: 14px 35px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: var(--font-ui);
+            direction: ltr;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 150px;
+        }
+
+        .save-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+        }
+
+        .save-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .edit-btn {
+            background: #f1f5f9;
+            color: #475569;
+            border: 2px solid #cbd5e1;
+        }
+
+        .edit-btn:hover {
+            background: #e2e8f0;
+            color: #1e293b;
+        }
+
+        input:disabled,
+        select:disabled,
+        .size-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            background-color: #f1f5f9 !important;
+            border-color: #cbd5e1 !important;
+        }
+
+        /* Font Controls */
+        .font-size-controls {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-top: 12px;
+            background: #f1f5f9;
+            padding: 12px 15px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .control-label {
+            font-size: 24px;
+            font-weight: 800;
+            color: #64748b;
+        }
+
+        .size-btn {
+            background: #ffffff;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            width: 44px;
+            height: 44px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            flex-shrink: 0;
+            font-family: var(--font-ui);
+        }
+
+        .size-btn:hover:not(:disabled) {
+            background: #e2e8f0;
+            border-color: #94a3b8;
+        }
+
+        .size-display {
+            font-family: var(--font-ui);
+            font-size: 18px;
+            font-weight: 700;
+            width: 80px;
+            text-align: center;
+            direction: ltr;
+            background: #ffffff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 2px solid var(--border-color);
+            flex-shrink: 0;
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reset-btn {
+            background: #eef2ff;
+            color: #4338ca;
+            border: 2px solid #c7d2fe;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-family: var(--font-ui);
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            flex-shrink: 0;
+            letter-spacing: 0.5px;
+        }
+
+        .reset-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+
+
+        /* DOWNLOAD COUNTER STYLES */
+        .download-stats {
+            margin-top: 25px;
+            padding: 15px 30px;
+            background: #ffffff;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .download-stats p {
+            font-family: var(--font-sindhi);
+            font-size: 20px;
+            color: #475569;
+            margin: 0;
+            font-weight: bold;
+        }
+        
+        .download-stats .count-num {
+            font-family: var(--font-ui);
+            font-size: 26px;
+            font-weight: 800;
+            color: #2563eb;
+            background: #eff6ff;
+            padding: 2px 15px;
+            border-radius: 30px;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .form-footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .print-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border: none;
+            padding: 22px 70px;
+            font-size: 38px;
+            font-weight: 800;
+            font-family: var(--font-sindhi);
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .print-btn:not(:disabled):hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 25px 50px rgba(16, 185, 129, 0.5);
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+        }
+
+        /* BACKGROUND DECORATIONS */
+        .bg-glow-1 {
+            position: fixed;
+            top: -100px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .bg-glow-2 {
+            position: fixed;
+            bottom: -200px;
+            left: -200px;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* PREVIEW WRAPPER ENHANCEMENT */
+        .preview-section {
+            background: rgba(15, 23, 42, 0.03);
+            border-radius: 40px;
+            padding: 60px 20px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .cert-wrapper {
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3);
+            transform-origin: center top;
+            transition: transform 0.5s ease;
+        }
+
+        .preview-section:hover .cert-wrapper {
+            transform: scale(1.02);
+        }
+
+        .seo-content h3 {
+            font-size: 22px;
+            color: #2563eb;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .seo-content p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .seo-content ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .seo-content li {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .seo-content .sindhi-text {
+            font-family: var(--font-sindhi);
+            direction: rtl;
+            text-align: right;
+            font-size: 24px;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border-right: 4px solid #10b981;
+            margin-top: 30px;
+        }
+
+        /* Editable Label Styling - COMPLETELY FIXED TO PREVENT ANY LAYOUT SHIFTS! */
+        .editable-active {
+            outline: 2px dashed #3b82f6 !important;
+            outline-offset: -2px;
+            background-color: rgba(59, 130, 246, 0.1) !important;
+            cursor: text;
+        }
+
+        .editable-value {
+            outline: 2px dashed #10b981 !important;
+            outline-offset: -2px;
+            background-color: rgba(16, 185, 129, 0.1) !important;
+            cursor: text;
+            border-radius: 4px;
+        }
+
+        .delete-row-btn {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #fee2e2;
+            color: #ef4444;
+            border: 1px solid #fca5a5;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 2px 6px;
+            transition: 0.2s;
+            z-index: 50;
+        }
+
+        .delete-row-btn:hover {
+            background: #fca5a5;
+            color: white;
+        }
+
+        /* ================= BASE CERTIFICATE PREVIEW (CLASSIC FRAME) ================= */
+        .preview-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .scroll-hint {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 12px;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        @keyframes header-bg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .cert-scroll-wrapper {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            background-color: #1e293b;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+        }
+
+        .cert-wrapper,
+        .cert-table,
+        .main-title,
+        .sub-header,
+        .handwritten,
+        .td-label {
+            font-family: var(--font-sindhi) !important;
+        }
+
+        .cert-wrapper {
+            flex-shrink: 0;
+            background-color: var(--paper-bg);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+        }
+
+        .size-a4 {
+            --scale: 1;
+            width: 210mm;
+            height: 297mm;
+            padding: 10mm;
+        }
+
+        .size-a3 {
+            --scale: 1.4142;
+            width: 297mm;
+            height: 420mm;
+            padding: calc(10mm * var(--scale));
+        }
+
+        /* Base Classic Layout */
+        .cert-border-outer {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            padding: calc(5px * var(--scale));
+            background-image: var(--border-pattern);
+            border: calc(7px * var(--scale)) double var(--cert-primary);
+            background-color: var(--cert-secondary);
+            transition: all 0.3s ease;
+        }
+
+        /* Shift Logic built into properties */
+        .cert-border-inner {
+            width: 100%;
+            height: 100%;
+            background-color: var(--paper-bg);
+            position: relative;
+            padding: calc(var(--cert-padding-y, 15px) * var(--scale)) calc(25px * var(--scale));
+            display: flex;
+            flex-direction: column;
+            border: calc(3px * var(--scale)) solid var(--cert-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .top-section-bg {
+            transition: all 0.3s ease;
+            width: 100%;
+            position: relative;
+        }
+
+        .corner {
+            position: absolute;
+            width: calc(38px * var(--scale));
+            height: calc(38px * var(--scale));
+            border-radius: 50%;
+            background-color: var(--cert-primary);
+            border: calc(2px * var(--scale)) solid var(--cert-secondary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+            transition: all 0.3s ease;
+        }
+
+        .corner::after {
+            content: '
+            '
+            ;
+            width: 60%;
+            height: 60%;
+            border-radius: 50%;
+            border: calc(1px * var(--scale)) dashed var(--cert-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .corner-tl {
+            top: calc(-18px * var(--scale));
+            left: calc(-18px * var(--scale));
+        }
+
+        .corner-tr {
+            top: calc(-18px * var(--scale));
+            right: calc(-18px * var(--scale));
+        }
+
+        .corner-bl {
+            bottom: calc(-18px * var(--scale));
+            left: calc(-18px * var(--scale));
+        }
+
+        .corner-br {
+            bottom: calc(-18px * var(--scale));
+            right: calc(-18px * var(--scale));
+        }
+
+        .cert-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .header-svg-container {
+            width: 100%;
+            height: calc(var(--header-h, 130px) * var(--scale));
+            display: block;
+            margin-top: calc(var(--header-mt, 5px) * var(--scale));
+            overflow: visible;
+            transition: all 0.3s ease;
+        }
+
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: calc(var(--logo-mt, -45px) * var(--scale));
+            transition: all 0.3s ease;
+        }
+
+        .seal-outer {
+            width: calc(110px * var(--scale));
+            height: calc(110px * var(--scale));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: calc(5px * var(--scale));
+            border-radius: 50%;
+        }
+
+        .crest-vector-svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .district-badge {
+            border: calc(1.5px * var(--scale)) solid var(--cert-secondary);
+            padding: calc(4px * var(--scale)) calc(18px * var(--scale));
+            font-size: calc(14px * var(--scale));
+            font-weight: bold;
+            color: var(--cert-primary);
+            background: var(--paper-bg);
+            margin-top: calc(-5px * var(--scale));
+            font-family: Arial, sans-serif;
+            border-radius: calc(20px * var(--scale));
+            transition: all 0.3s ease;
+        }
+
+        .sub-header {
+            text-align: center;
+            color: var(--cert-primary);
+            font-weight: bold;
+            font-size: calc(24px * var(--scale));
+            margin: calc(var(--sub-header-m, 5px) * var(--scale)) 0;
+            transition: all 0.3s ease;
+        }
+
+        .title-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: calc(var(--title-mb, 5px) * var(--scale));
+        }
+
+        .title-lines {
+            flex-grow: 1;
+            height: calc(6px * var(--scale));
+            background: repeating-linear-gradient(90deg, var(--cert-secondary) 0, var(--cert-secondary) calc(6px * var(--scale)), transparent calc(6px * var(--scale)), transparent calc(10px * var(--scale)));
+            margin: 0 calc(10px * var(--scale));
+            max-width: calc(140px * var(--scale));
+            transition: all 0.3s ease;
+        }
+
+        .main-title {
+            padding: 0px calc(25px * var(--scale));
+            font-size: calc(34px * var(--scale));
+            font-weight: bold;
+            background: var(--cert-primary);
+            color: var(--cert-secondary);
+            border-radius: calc(30px * var(--scale));
+            border: calc(2.5px * var(--scale)) solid var(--cert-secondary);
+            transition: all 0.3s ease;
+        }
+
+        /* GR AND FORM NO ROW */
+        .gr-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            color: var(--cert-primary);
+            font-size: calc(24px * var(--scale));
+            font-weight: bold;
+            margin-bottom: calc(var(--gr-mb, 5px) * var(--scale));
+            width: 100%;
+        }
+
+        .gr-box {
+            display: flex;
+            align-items: baseline;
+            position: relative;
+        }
+
+        .gr-line {
+            border-bottom: calc(1.5px * var(--scale)) solid var(--cert-primary);
+            width: calc(280px * var(--scale));
+            position: relative;
+            margin-right: calc(10px * var(--scale));
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        /* New Form No specific line styles (auto width, min-width, inherits border-bottom dynamically) */
+        .form-no-line {
+            width: auto !important;
+            min-width: calc(60px * var(--scale));
+            text-align: center;
+            margin-right: 0 !important;
+            padding: 0 calc(10px * var(--scale));
+        }
+
+        #out-gr {
+            font-family: var(--font-date);
+            font-size: calc(24px * var(--scale));
+            position: absolute;
+            bottom: calc(3px * var(--scale));
+            right: calc(15px * var(--scale));
+            direction: ltr;
+            color: var(--pen-blue);
+        }
+
+        #out-form-no {
+            font-family: var(--font-date) !important;
+            font-size: calc(24px * var(--scale));
+            color: var(--pen-blue);
+            direction: ltr;
+            position: relative;
+            bottom: calc(-2px * var(--scale));
+            display: inline-block;
+        }
+
+        .cert-table {
+            width: 100%;
+            border: calc(2px * var(--scale)) solid var(--cert-primary);
+            border-collapse: collapse;
+            transition: all 0.3s;
+            --table-scale: 1;
+        }
+
+        .cert-table td {
+            border: calc(1px * var(--scale)) solid var(--cert-primary);
+            padding: 0px calc(10px * var(--scale) * var(--table-scale));
+            vertical-align: middle;
+            height: calc(36px * var(--scale) * var(--table-scale));
+            transition: all 0.3s;
+        }
+
+        .td-label {
+            width: calc(230px * var(--scale));
+            color: var(--cert-primary);
+            font-weight: bold;
+            font-size: calc(24px * var(--scale) * var(--table-scale)) !important;
+            background-color: var(--bg-gold-light);
+            transition: all 0.3s;
+        }
+
+        .td-value {
+            text-align: right;
+            padding-right: calc(15px * var(--scale));
+            transition: all 0.3s;
+        }
+
+        .handwritten {
+            color: var(--pen-blue);
+            font-size: calc(30px * var(--scale) * var(--table-scale)) !important;
+            font-weight: bold;
+            line-height: 1;
+            transform: rotate(-1deg) translateY(calc(-2px * var(--scale)));
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        /* Fix for Editable Text Maintaining Colors and Font Sizes */
+        .handwritten *,
+        .td-label *,
+        .editable-allowed * {
+            color: inherit !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            background-color: transparent !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+            text-shadow: none !important;
+        }
+
+        .date-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: calc(10px * var(--scale));
+            direction: rtl;
+        }
+
+        .date-wrapper .digit {
+            font-family: var(--font-date) !important;
+            font-size: calc(24px * var(--scale) * var(--table-scale)) !important;
+            font-weight: bold;
+        }
+
+        .date-wrapper .sindhi-month {
+            font-size: calc(28px * var(--scale) * var(--table-scale)) !important;
+        }
+
+        /* Relative position required for the absolute delete button so text doesn't wrap! */
+        .split-row {
+            display: flex;
+            justify-content: flex-start;
+            gap: calc(8px * var(--scale));
+            width: 100%;
+            align-items: baseline;
+            position: relative;
+        }
+
+        .footer-banner {
+            text-align: center;
+            padding: calc(2px * var(--scale));
+            font-size: calc(26px * var(--scale));
+            font-weight: bold;
+            margin: calc(var(--footer-mt, 10px) * var(--scale)) 0 calc(var(--footer-mb, 10px) * var(--scale)) 0;
+            background: var(--bg-gold-light);
+            color: var(--cert-primary);
+            border: calc(1.5px * var(--scale)) dashed var(--cert-secondary);
+            transition: all 0.3s;
+        }
+
+        .signatures-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            color: var(--cert-primary);
+            font-weight: bold;
+            font-size: calc(24px * var(--scale));
+            margin-top: auto;
+            padding: 0 calc(10px * var(--scale));
+            transition: all 0.3s;
+        }
+
+        .sig-box {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sig-box-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .sig-line-container {
+            display: flex;
+            align-items: baseline;
+        }
+
+        .line-blank {
+            border-bottom: calc(1.5px * var(--scale)) solid var(--cert-primary);
+            width: calc(140px * var(--scale));
+            margin-right: calc(8px * var(--scale));
+            display: inline-block;
+        }
+
+        .sig-space {
+            height: calc(var(--sig-space, 30px) * var(--scale));
+            transition: all 0.3s ease;
+        }
+
+        /* ================= 1-PAGE COMPRESSION UTILITY FOR ALL ALTERNATE THEMES ================= */
+        .cert-wrapper[class*="
+        theme-"
+
+        ] .cert-border-outer {
+            padding: calc(6px * var(--scale));
+            background-image: none;
+        }
+
+        .cert-wrapper[class*="
+        theme-"
+
+        ] .cert-border-inner {
+            padding: calc(var(--cert-padding-y, 12px) * var(--scale)) calc(20px * var(--scale));
+            height: 100%;
+            margin: 0;
+        }
+
+        .cert-wrapper[class*="
+        theme-"
+
+        ] .header-svg-container {
+            height: calc(var(--header-h, 115px) * var(--scale));
+            margin-top: calc(var(--header-mt, 2px) * var(--scale));
+        }
+
+        .cert-wrapper[class*="
+        theme-"
+
+        ] .logo-area {
+            margin-top: calc(var(--logo-mt, -48px) * var(--scale));
+        }
+
+        .cert-wrapper[class*="
+        theme-"
+
+        ] .cert-table td {
+            height: calc(30px * var(--scale) * var(--table-scale));
+        }
+
+        .cert-wrapper[class*="
+        theme-"
+
+        ] .sig-space {
+            height: calc(var(--sig-space, 18px) * var(--scale));
+        }
+
+        .cert-wrapper[class*="
+        theme-"
+
+        ] .footer-banner {
+            margin: calc(var(--footer-mt, 6px) * var(--scale)) 0 calc(var(--footer-mb, 6px) * var(--scale)) 0;
+            padding: calc(4px * var(--scale)) 0;
+        }
+
+        .cert-wrapper[class*="
+        theme-"
+
+        ] .top-section-bg {
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Default Logo Toggle System */
+        .logo-blue-group,
+        .logo-green-group,
+        .logo-premium-group,
+        .logo-heritage-group {
+            display: none;
+        }
+
+        .logo-classic-group {
+            display: inline;
+        }
+
+        .cert-wrapper[class*="
+        theme-"
+
+        ] .logo-classic-group {
+            display: none;
+        }
+
+        /* ================= THEME 2: BLUE MODERN ================= */
+        .theme-blue {
+            --cert-primary: #0f172a;
+            --cert-secondary: #0284c7;
+            --bg-gold-light: #f0f9ff;
+            --pen-blue: #0369a1;
+        }
+
+        .theme-blue .logo-blue-group {
+            display: inline;
+        }
+
+        .theme-blue .cert-border-outer {
+            border: calc(8px * var(--scale)) solid var(--cert-primary);
+            background-color: var(--paper-bg);
+            box-shadow: inset 0 0 0 calc(6px * var(--scale)) var(--cert-secondary);
+        }
+
+        .theme-blue .cert-border-inner {
+            border: calc(3px * var(--scale)) dashed var(--cert-secondary);
+        }
+
+        .theme-blue .corner {
+            border-radius: calc(8px * var(--scale));
+            background-color: var(--cert-secondary);
+            border: calc(2.5px * var(--scale)) solid var(--cert-primary);
+            transform: rotate(45deg);
+            width: calc(30px * var(--scale));
+            height: calc(30px * var(--scale));
+        }
+
+        .theme-blue .corner::after {
+            border-radius: calc(4px * var(--scale));
+            border: calc(1.5px * var(--scale)) solid var(--cert-primary);
+        }
+
+        .theme-blue .corner-tl {
+            top: calc(-10px * var(--scale));
+            left: calc(-10px * var(--scale));
+        }
+
+        .theme-blue .corner-tr {
+            top: calc(-10px * var(--scale));
+            right: calc(-10px * var(--scale));
+        }
+
+        .theme-blue .corner-bl {
+            bottom: calc(-10px * var(--scale));
+            left: calc(-10px * var(--scale));
+        }
+
+        .theme-blue .corner-br {
+            bottom: calc(-10px * var(--scale));
+            right: calc(-10px * var(--scale));
+        }
+
+        .theme-blue .district-badge {
+            background: var(--cert-secondary);
+            color: var(--paper-bg);
+            border-radius: calc(8px * var(--scale));
+            border: calc(2px * var(--scale)) solid var(--cert-primary);
+        }
+
+        .theme-blue .main-title {
+            background: var(--paper-bg);
+            color: var(--cert-primary);
+            border: calc(2px * var(--scale)) dashed var(--cert-secondary);
+            border-radius: calc(12px * var(--scale));
+            box-shadow: calc(5px * var(--scale)) calc(5px * var(--scale)) 0px var(--bg-gold-light);
+            padding: 0px calc(20px * var(--scale));
+        }
+
+        .theme-blue .title-lines {
+            background: repeating-linear-gradient(90deg, var(--cert-primary) 0, var(--cert-primary) calc(4px * var(--scale)), transparent calc(4px * var(--scale)), transparent calc(10px * var(--scale)));
+        }
+
+        .theme-blue .gr-line {
+            border-bottom: calc(1.5px * var(--scale)) dashed var(--cert-secondary);
+        }
+
+        /* SPECIFIC THEME OVERRIDE FOR TABLE GAP SCALING */
+        .theme-blue .cert-table {
+            border-collapse: separate;
+            border-spacing: 0 calc(var(--blue-gap, 3px) * var(--scale) * var(--table-scale));
+            border: none;
+        }
+
+        .theme-blue .cert-table td {
+            border: calc(1.5px * var(--scale)) solid var(--cert-secondary);
+        }
+
+        .theme-blue .cert-table .td-label {
+            background: linear-gradient(90deg, var(--cert-secondary) 0%, #38bdf8 100%);
+            color: #ffffff;
+            border-right: none;
+            border-radius: 0 calc(8px * var(--scale)) calc(8px * var(--scale)) 0;
+            box-shadow: inset calc(4px * var(--scale)) 0 0 var(--cert-primary);
+        }
+
+        .theme-blue .cert-table .td-value {
+            border-left: none;
+            background-color: var(--bg-gold-light);
+            border-radius: calc(8px * var(--scale)) 0 0 calc(8px * var(--scale));
+        }
+
+        .theme-blue .handwritten {
+            color: var(--cert-primary);
+        }
+
+        .theme-blue .footer-banner {
+            background: transparent;
+            border: none;
+            border-top: calc(2px * var(--scale)) solid var(--cert-secondary);
+            border-bottom: calc(2px * var(--scale)) solid var(--cert-secondary);
+            color: var(--cert-primary);
+        }
+
+        /* ================= THEME 3: EMERALD MINIMALIST ================= */
+        .theme-green {
+            --cert-primary: #064e3b;
+            --cert-secondary: #059669;
+            --bg-gold-light: #ecfdf5;
+            --pen-blue: #1e293b;
+        }
+
+        .theme-green .logo-green-group {
+            display: inline;
+        }
+
+        .theme-green .cert-border-outer {
+            border: calc(10px * var(--scale)) solid var(--cert-primary);
+            background-color: var(--bg-gold-light);
+            box-shadow: inset 0 0 0 calc(2px * var(--scale)) var(--cert-secondary);
+        }
+
+        .theme-green .cert-border-inner {
+            border: calc(1px * var(--scale)) solid var(--cert-secondary);
+        }
+
+        .theme-green .top-section-bg {
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            padding-top: calc(5px * var(--scale));
+            padding-bottom: calc(15px * var(--scale));
+            margin-bottom: calc(10px * var(--scale));
+            margin-top: calc(-5px * var(--scale));
+            box-shadow: none;
+        }
+
+        .theme-green .corner {
+            border-radius: 0;
+            width: calc(30px * var(--scale));
+            height: calc(30px * var(--scale));
+            background-color: var(--cert-primary);
+            border: calc(3px * var(--scale)) solid var(--bg-gold-light);
+            box-shadow: 0 0 0 calc(2px * var(--scale)) var(--cert-secondary);
+            transform: none;
+        }
+
+        .theme-green .corner::after {
+            border-radius: 0;
+            width: calc(12px * var(--scale));
+            height: calc(12px * var(--scale));
+            border: calc(2px * var(--scale)) solid var(--cert-secondary);
+        }
+
+        .theme-green .corner-tl {
+            top: calc(-5px * var(--scale));
+            left: calc(-5px * var(--scale));
+        }
+
+        .theme-green .corner-tr {
+            top: calc(-5px * var(--scale));
+            right: calc(-5px * var(--scale));
+        }
+
+        .theme-green .corner-bl {
+            bottom: calc(-5px * var(--scale));
+            left: calc(-5px * var(--scale));
+        }
+
+        .theme-green .corner-br {
+            bottom: calc(-5px * var(--scale));
+            right: calc(-5px * var(--scale));
+        }
+
+        .theme-green .district-badge {
+            background: transparent;
+            color: var(--cert-primary);
+            border-radius: 0;
+            border: none;
+            border-top: calc(2px * var(--scale)) solid var(--cert-primary);
+            border-bottom: calc(2px * var(--scale)) solid var(--cert-primary);
+            letter-spacing: 1px;
+        }
+
+        .theme-green .main-title {
+            background: transparent;
+            color: var(--cert-primary);
+            border: none;
+            border-bottom: calc(4px * var(--scale)) double var(--cert-primary);
+            border-top: calc(1.5px * var(--scale)) solid var(--cert-primary);
+            border-radius: 0;
+            padding: calc(4px * var(--scale)) calc(20px * var(--scale));
+            margin-bottom: calc(-10px * var(--scale));
+        }
+
+        .theme-green .title-lines {
+            background: transparent;
+            border-bottom: calc(1.5px * var(--scale)) dashed var(--cert-secondary);
+            transform: translateY(calc(0px * var(--scale)));
+        }
+
+        .theme-green .cert-table {
+            border: none;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .theme-green .cert-table td {
+            border: none;
+            border-bottom: calc(1px * var(--scale)) solid var(--cert-primary);
+            background-color: transparent;
+        }
+
+        .theme-green .cert-table .td-label {
+            background-color: transparent;
+            color: var(--cert-primary);
+            border-left: calc(1.5px * var(--scale)) solid var(--cert-primary);
+            border-right: none;
+        }
+
+        .theme-green .cert-table .td-value {
+            border-left: none;
+        }
+
+        .theme-green .cert-table tr:nth-child(even) td {
+            background-color: var(--paper-bg);
+        }
+
+        .theme-green .gr-line {
+            border-bottom: calc(1.5px * var(--scale)) solid var(--cert-primary);
+        }
+
+        .theme-green .footer-banner {
+            background: var(--cert-primary);
+            color: white;
+            border: none;
+            border-radius: calc(20px * var(--scale));
+        }
+
+        .theme-green .handwritten {
+            color: var(--pen-blue);
+        }
+
+        /* ================= THEME 4: PREMIUM MIDNIGHT ================= */
+        .theme-premium {
+            --cert-primary: #172554;
+            --cert-secondary: #ca8a04;
+            --bg-gold-light: #fefce8;
+            --pen-blue: #000000;
+        }
+
+        .theme-premium .logo-premium-group {
+            display: inline;
+        }
+
+        .theme-premium .cert-border-outer {
+            border: calc(10px * var(--scale)) solid var(--cert-primary);
+            background-color: var(--paper-bg);
+            box-shadow: inset 0 0 0 calc(2px * var(--scale)) var(--cert-secondary), 0 0 0 calc(4px * var(--scale)) var(--cert-primary);
+        }
+
+        .theme-premium .cert-border-inner {
+            border: calc(1.5px * var(--scale)) solid var(--cert-secondary);
+            background-color: var(--bg-gold-light);
+        }
+
+        .theme-premium .corner {
+            background: transparent;
+            border-radius: 0;
+            width: calc(40px * var(--scale));
+            height: calc(40px * var(--scale));
+            border: none;
+            transform: none;
+            box-shadow: none;
+            z-index: 10;
+        }
+
+        .theme-premium .corner::after {
+            display: none;
+        }
+
+        .theme-premium .corner-tl {
+            border-top: calc(5px * var(--scale)) solid var(--cert-primary);
+            border-left: calc(5px * var(--scale)) solid var(--cert-primary);
+            top: calc(2px * var(--scale));
+            left: calc(2px * var(--scale));
+        }
+
+        .theme-premium .corner-tr {
+            border-top: calc(5px * var(--scale)) solid var(--cert-primary);
+            border-right: calc(5px * var(--scale)) solid var(--cert-primary);
+            top: calc(2px * var(--scale));
+            right: calc(2px * var(--scale));
+        }
+
+        .theme-premium .corner-bl {
+            border-bottom: calc(5px * var(--scale)) solid var(--cert-primary);
+            border-left: calc(5px * var(--scale)) solid var(--cert-primary);
+            bottom: calc(2px * var(--scale));
+            left: calc(2px * var(--scale));
+        }
+
+        .theme-premium .corner-br {
+            border-bottom: calc(5px * var(--scale)) solid var(--cert-primary);
+            border-right: calc(5px * var(--scale)) solid var(--cert-primary);
+            bottom: calc(2px * var(--scale));
+            right: calc(2px * var(--scale));
+        }
+
+        .theme-premium .district-badge {
+            background: var(--cert-primary);
+            color: var(--cert-secondary);
+            border-radius: calc(4px * var(--scale));
+            border: calc(1.5px * var(--scale)) solid var(--cert-secondary);
+            letter-spacing: 2px;
+        }
+
+        .theme-premium .main-title {
+            background: linear-gradient(90deg, transparent, var(--cert-primary) 20%, var(--cert-primary) 80%, transparent);
+            color: var(--cert-secondary);
+            border: none;
+            border-radius: 0;
+            padding: calc(4px * var(--scale)) calc(30px * var(--scale));
+            margin-bottom: calc(-10px * var(--scale));
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .theme-premium .title-lines {
+            background: var(--cert-secondary);
+            height: calc(2px * var(--scale));
+            transform: translateY(calc(0px * var(--scale)));
+        }
+
+        .theme-premium .cert-table {
+            border: none;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .theme-premium .cert-table td {
+            border: none;
+            border-bottom: calc(1.5px * var(--scale)) dotted var(--cert-secondary);
+            background-color: transparent !important;
+        }
+
+        .theme-premium .cert-table .td-label {
+            color: var(--cert-primary);
+            border-left: calc(4px * var(--scale)) solid var(--cert-primary);
+            background: transparent !important;
+            font-weight: 800;
+            border-right: none;
+        }
+
+        .theme-premium .cert-table .td-value {
+            border-left: none;
+        }
+
+        .theme-premium .gr-line {
+            border-bottom: calc(1.5px * var(--scale)) solid var(--cert-primary);
+        }
+
+        .theme-premium .footer-banner {
+            background: var(--paper-bg);
+            color: var(--cert-primary);
+            border: calc(2px * var(--scale)) solid var(--cert-secondary);
+            border-radius: calc(4px * var(--scale));
+            box-shadow: 0 0 0 calc(2px * var(--scale)) var(--cert-primary);
+        }
+
+        .theme-premium .handwritten {
+            color: var(--pen-blue);
+        }
+
+        /* ================= THEME 5: ROYAL HERITAGE ================= */
+        .theme-heritage {
+            --cert-primary: #1e293b;
+            --cert-secondary: #b45309;
+            --bg-gold-light: #f5f5f4;
+            --pen-blue: #334155;
+        }
+
+        .theme-heritage .logo-heritage-group {
+            display: inline;
+        }
+
+        .theme-heritage .cert-border-outer {
+            border: calc(3px * var(--scale)) solid var(--cert-secondary);
+            background-color: var(--paper-bg);
+            box-shadow: inset 0 0 0 calc(4px * var(--scale)) var(--cert-primary);
+        }
+
+        .theme-heritage .cert-border-inner {
+            border: calc(1px * var(--scale)) solid var(--cert-primary);
+        }
+
+        .theme-heritage .corner {
+            border-radius: 0;
+            width: calc(26px * var(--scale));
+            height: calc(26px * var(--scale));
+            background: var(--cert-secondary);
+            border: calc(2px * var(--scale)) solid var(--paper-bg);
+            transform: rotate(45deg);
+        }
+
+        .theme-heritage .corner::after {
+            border-radius: 50%;
+            width: calc(12px * var(--scale));
+            height: calc(12px * var(--scale));
+            background: var(--cert-primary);
+            border: none;
+        }
+
+        .theme-heritage .corner-tl {
+            top: calc(-13px * var(--scale));
+            left: calc(-13px * var(--scale));
+        }
+
+        .theme-heritage .corner-tr {
+            top: calc(-13px * var(--scale));
+            right: calc(-13px * var(--scale));
+        }
+
+        .theme-heritage .corner-bl {
+            bottom: calc(-13px * var(--scale));
+            left: calc(-13px * var(--scale));
+        }
+
+        .theme-heritage .corner-br {
+            bottom: calc(-13px * var(--scale));
+            right: calc(-13px * var(--scale));
+        }
+
+        .theme-heritage .district-badge {
+            background: transparent;
+            color: var(--cert-secondary);
+            border-radius: 0;
+            border: none;
+            border-bottom: calc(1.5px * var(--scale)) solid var(--cert-secondary);
+            letter-spacing: 2px;
+        }
+
+        .theme-heritage .main-title {
+            background: var(--cert-primary);
+            color: var(--paper-bg);
+            border-radius: calc(50px * var(--scale));
+            padding: calc(6px * var(--scale)) calc(40px * var(--scale));
+            border: calc(2px * var(--scale)) solid var(--cert-secondary);
+            box-shadow: 0 calc(4px * var(--scale)) 0 var(--cert-secondary);
+            margin-bottom: calc(-10px * var(--scale));
+        }
+
+        .theme-heritage .title-lines {
+            background: transparent;
+            border-bottom: calc(2px * var(--scale)) solid var(--cert-primary);
+            transform: translateY(calc(0px * var(--scale)));
+        }
+
+        .theme-heritage .cert-table {
+            border: calc(3px * var(--scale)) double var(--cert-primary);
+            border-collapse: collapse;
+        }
+
+        .theme-heritage .cert-table td {
+            border: calc(1px * var(--scale)) solid var(--cert-primary);
+            background-color: var(--paper-bg);
+        }
+
+        .theme-heritage .cert-table .td-label {
+            color: var(--cert-primary);
+            background: var(--bg-gold-light) !important;
+            font-weight: 800;
+            border-left: calc(2px * var(--scale)) solid var(--cert-primary);
+            border-right: none;
+        }
+
+        .theme-heritage .cert-table tr:nth-child(even) td.td-value {
+            background-color: rgba(180, 83, 9, 0.05) !important;
+        }
+
+        .theme-heritage .gr-line {
+            border-bottom: calc(1.5px * var(--scale)) solid var(--cert-primary);
+        }
+
+        .theme-heritage .footer-banner {
+            background: var(--cert-secondary);
+            color: var(--paper-bg);
+            border: calc(1.5px * var(--scale)) solid var(--cert-primary);
+            border-radius: calc(4px * var(--scale));
+        }
+
+        .theme-heritage .handwritten {
+            color: var(--pen-blue);
+        }
+
+        /* ================= 10 NEW COLOR-DRIVEN THEMES ================= */
+        .theme-original-green {
+            --cert-primary: #0f5132;
+            --cert-secondary: #86efac;
+            --bg-gold-light: #f0fdf4;
+            --pen-blue: #14532d;
+        }
+
+        .theme-original-green .logo-classic-group {
+            display: inline;
+        }
+
+        .theme-original-green .cert-border-outer {
+            border: calc(12px * var(--scale)) solid var(--cert-primary);
+            background-color: var(--bg-gold-light);
+        }
+
+        .theme-original-green .cert-border-inner {
+            border: calc(2px * var(--scale)) dashed var(--cert-primary);
+            background: transparent;
+        }
+
+        .theme-original-green .corner {
+            display: none;
+        }
+
+        .theme-original-green .district-badge {
+            background: var(--cert-primary);
+            color: white;
+            border-radius: 0;
+            border: none;
+        }
+
+        .theme-original-green .main-title {
+            border: calc(2px * var(--scale)) solid var(--cert-primary);
+            background: var(--paper-bg);
+            color: var(--cert-primary);
+            border-radius: 0;
+            box-shadow: calc(4px * var(--scale)) calc(4px * var(--scale)) 0 var(--cert-secondary);
+        }
+
+        .theme-original-green .cert-table {
+            border: calc(2px * var(--scale)) solid var(--cert-primary);
+            border-collapse: collapse;
+        }
+
+        .theme-original-green .cert-table td {
+            border: calc(1px * var(--scale)) solid var(--cert-primary);
+        }
+
+        .theme-original-green .cert-table .td-label {
+            background: var(--cert-primary);
+            color: white;
+            border-right: none;
+        }
+
+        .theme-original-green .cert-table tr:nth-child(even) td.td-value {
+            background-color: var(--bg-gold-light);
+        }
+
+        .theme-royal-blue {
+            --cert-primary: #1e3a8a;
+            --cert-secondary: #93c5fd;
+            --bg-gold-light: #eff6ff;
+            --pen-blue: #1e3a8a;
+        }
+
+        .theme-royal-blue .logo-blue-group {
+            display: inline;
+        }
+
+        .theme-royal-blue .cert-border-outer {
+            border: calc(4px * var(--scale)) solid var(--cert-primary);
+            box-shadow: inset 0 0 0 calc(4px * var(--scale)) var(--cert-secondary);
+            background: var(--paper-bg);
+        }
+
+        .theme-royal-blue .cert-border-inner {
+            border: calc(1px * var(--scale)) solid var(--cert-primary);
+        }
+
+        .theme-royal-blue .corner {
+            border-radius: 0;
+            background: var(--cert-primary);
+            width: calc(20px * var(--scale));
+            height: calc(20px * var(--scale));
+            transform: rotate(45deg);
+            border: none;
+        }
+
+        .theme-royal-blue .corner::after {
+            display: none;
+        }
+
+        .theme-royal-blue .district-badge {
+            background: transparent;
+            border: calc(2px * var(--scale)) solid var(--cert-primary);
+            color: var(--cert-primary);
+            border-radius: calc(20px * var(--scale));
+        }
+
+        .theme-royal-blue .main-title {
+            background: transparent;
+            border: top: calc(2px * var(--scale)) solid var(--cert-primary);
+            border-bottom: calc(2px * var(--scale)) solid var(--cert-primary);
+            border-radius: 0;
+            color: var(--cert-primary);
+        }
+
+        .theme-royal-blue .cert-table {
+            border-top: calc(3px * var(--scale)) solid var(--cert-primary);
+            border-bottom: calc(3px * var(--scale)) solid var(--cert-primary);
+            border-left: none;
+            border-right: none;
+            border-collapse: collapse;
+        }
+
+        .theme-royal-blue .cert-table td {
+            border: calc(1px * var(--scale)) solid var(--cert-secondary);
+            border-left: none;
+            border-right: none;
+        }
+
+        .theme-royal-blue .cert-table .td-label {
+            background: var(--bg-gold-light);
+            color: var(--cert-primary);
+            font-weight: bold;
+            border-left: calc(2px * var(--scale)) solid var(--cert-primary);
+        }
+
+        .theme-regal-purple {
+            --cert-primary: #581c87;
+            --cert-secondary: #d8b4fe;
+            --bg-gold-light: #faf5ff;
+            --pen-blue: #3b0764;
+        }
+
+        .theme-regal-purple .logo-premium-group {
+            display: inline;
+        }
+
+        .theme-regal-purple .cert-border-outer {
+            border: calc(6px * var(--scale)) solid var(--cert-primary);
+            border-radius: calc(40px * var(--scale));
+            background: var(--bg-gold-light);
+        }
+
+        .theme-regal-purple .cert-border-inner {
+            border: calc(2px * var(--scale)) dashed var(--cert-secondary);
+            border-radius: calc(30px * var(--scale));
+            background: transparent;
+        }
+
+        .theme-regal-purple .corner {
+            display: none;
+        }
+
+        .theme-regal-purple .district-badge {
+            background: var(--cert-primary);
+            color: white;
+            border-radius: calc(30px * var(--scale));
+            border: calc(2px * var(--scale)) solid var(--cert-secondary);
+        }
+
+        .theme-regal-purple .main-title {
+            background: var(--cert-primary);
+            color: white;
+            border-radius: calc(30px * var(--scale));
+            box-shadow: 0 calc(4px * var(--scale)) calc(10px * var(--scale)) rgba(88, 28, 135, 0.3);
+            border: none;
+        }
+
+        /* SPECIFIC THEME OVERRIDE FOR TABLE GAP SCALING */
+        .theme-regal-purple .cert-table {
+            border-collapse: separate;
+            border-spacing: 0 calc(4px * var(--scale) * var(--table-scale));
+            border: none;
+        }
+
+        .theme-regal-purple .cert-table td {
+            border: calc(1px * var(--scale)) solid var(--cert-secondary);
+            border-radius: calc(8px * var(--scale));
+            background: var(--paper-bg);
+        }
+
+        .theme-regal-purple .cert-table .td-label {
+            background: var(--cert-secondary);
+            color: var(--cert-primary);
+        }
+
+        .theme-ocean-teal {
+            --cert-primary: #0f766e;
+            --cert-secondary: #5eead4;
+            --bg-gold-light: #f0fdfa;
+            --pen-blue: #0f766e;
+        }
+
+        .theme-ocean-teal .logo-blue-group {
+            display: inline;
+        }
+
+        .theme-ocean-teal .cert-border-outer {
+            border: none;
+            background-color: var(--bg-gold-light);
+            box-shadow: inset 0 0 0 calc(8px * var(--scale)) var(--cert-primary), inset 0 0 0 calc(12px * var(--scale)) var(--cert-secondary);
+        }
+
+        .theme-ocean-teal .cert-border-inner {
+            border: none;
+            background: transparent;
+        }
+
+        .theme-ocean-teal .corner {
+            display: none;
+        }
+
+        .theme-ocean-teal .district-badge {
+            background: var(--paper-bg);
+            color: var(--cert-primary);
+            border-radius: calc(10px * var(--scale));
+            border: calc(1px * var(--scale)) solid var(--cert-primary);
+            box-shadow: calc(3px * var(--scale)) calc(3px * var(--scale)) 0 var(--cert-secondary);
+        }
+
+        .theme-ocean-teal .main-title {
+            background: var(--cert-secondary);
+            color: var(--cert-primary);
+            border-radius: calc(20px * var(--scale));
+            border: none;
+        }
+
+        .theme-ocean-teal .cert-table {
+            border-collapse: separate;
+            border-spacing: 0 calc(3px * var(--scale));
+            border: none;
+        }
+
+        .theme-ocean-teal .cert-table td {
+            border: none;
+            background: var(--paper-bg);
+            border-bottom: calc(2px * var(--scale)) solid var(--cert-secondary);
+        }
+
+        .theme-ocean-teal .cert-table .td-label {
+            border-radius: 0 calc(15px * var(--scale)) calc(15px * var(--scale)) 0;
+            background: var(--cert-primary);
+            color: white;
+            padding-left: calc(15px * var(--scale));
+        }
+
+        .theme-ocean-teal .cert-table .td-value {
+            border-radius: calc(15px * var(--scale)) 0 0 calc(15px * var(--scale));
+        }
+
+        .theme-sapphire-blue {
+            --cert-primary: #1d4ed8;
+            --cert-secondary: #60a5fa;
+            --bg-gold-light: #eff6ff;
+            --pen-blue: #1e3a8a;
+        }
+
+        .theme-sapphire-blue .logo-green-group {
+            display: inline;
+        }
+
+        .theme-sapphire-blue .cert-border-outer {
+            border: calc(3px * var(--scale)) dotted var(--cert-primary);
+            background: var(--paper-bg);
+            padding: calc(12px * var(--scale));
+        }
+
+        .theme-sapphire-blue .cert-border-inner {
+            border: calc(1px * var(--scale)) solid var(--cert-secondary);
+        }
+
+        .theme-sapphire-blue .corner {
+            background: var(--paper-bg);
+            border: calc(2px * var(--scale)) solid var(--cert-primary);
+            border-radius: 50%;
+            transform: none;
+        }
+
+        .theme-sapphire-blue .corner::after {
+            background: var(--cert-secondary);
+            border: none;
+            width: 40%;
+            height: 40%;
+            border-radius: 50%;
+        }
+
+        .theme-sapphire-blue .district-badge {
+            background: transparent;
+            border: none;
+            border-bottom: calc(2px * var(--scale)) solid var(--cert-primary);
+            border-radius: 0;
+            color: var(--cert-primary);
+        }
+
+        .theme-sapphire-blue .main-title {
+            background: transparent;
+            border: none;
+            color: var(--cert-primary);
+            text-decoration: underline;
+            text-decoration-color: var(--cert-secondary);
+            text-decoration-thickness: calc(3px * var(--scale));
+            border-radius: 0;
+        }
+
+        .theme-sapphire-blue .cert-table {
+            border: none;
+            border-collapse: collapse;
+        }
+
+        .theme-sapphire-blue .cert-table td {
+            border: none;
+            border-bottom: calc(1.5px * var(--scale)) dotted var(--cert-primary);
+            background: transparent;
+        }
+
+        .theme-sapphire-blue .cert-table .td-label {
+            background: transparent;
+            color: var(--cert-primary);
+            font-weight: 800;
+            border-left: calc(3px * var(--scale)) solid var(--cert-secondary);
+            border-right: none;
+        }
+
+        .theme-amber-gold {
+            --cert-primary: #b45309;
+            --cert-secondary: #fcd34d;
+            --bg-gold-light: #fffbeb;
+            --pen-blue: #78350f;
+        }
+
+        .theme-amber-gold .logo-heritage-group {
+            display: inline;
+        }
+
+        .theme-amber-gold .cert-border-outer {
+            border: calc(8px * var(--scale)) outset var(--cert-primary);
+            background: var(--bg-gold-light);
+        }
+
+        .theme-amber-gold .cert-border-inner {
+            border: calc(4px * var(--scale)) inset var(--cert-secondary);
+            background: transparent;
+        }
+
+        .theme-amber-gold .corner {
+            display: none;
+        }
+
+        .theme-amber-gold .district-badge {
+            background: var(--cert-primary);
+            color: var(--cert-secondary);
+            border: calc(2px * var(--scale)) solid var(--cert-secondary);
+            border-radius: 0;
+        }
+
+        .theme-amber-gold .main-title {
+            background: var(--cert-secondary);
+            color: var(--cert-primary);
+            border: calc(2px * var(--scale)) solid var(--cert-primary);
+            border-radius: 0;
+            box-shadow: inset 0 0 0 calc(2px * var(--scale)) var(--paper-bg);
+        }
+
+        .theme-amber-gold .cert-table {
+            border: calc(3px * var(--scale)) outset var(--cert-primary);
+            border-collapse: collapse;
+        }
+
+        .theme-amber-gold .cert-table td {
+            border: calc(1px * var(--scale)) solid var(--cert-primary);
+            background: var(--paper-bg);
+        }
+
+        .theme-amber-gold .cert-table .td-label {
+            background: var(--cert-secondary);
+            color: var(--cert-primary);
+            border-right: none;
+        }
+
+        .theme-plum-royal {
+            --cert-primary: #701a75;
+            --cert-secondary: #e879f9;
+            --bg-gold-light: #fdf4ff;
+            --pen-blue: #4a044e;
+        }
+
+        .theme-plum-royal .logo-premium-group {
+            display: inline;
+        }
+
+        .theme-plum-royal .cert-border-outer {
+            border: calc(4px * var(--scale)) double var(--cert-primary);
+            padding: calc(8px * var(--scale));
+            background: var(--paper-bg);
+        }
+
+        .theme-plum-royal .cert-border-inner {
+            border: calc(2px * var(--scale)) dashed var(--cert-secondary);
+            border-radius: calc(15px * var(--scale));
+            background: var(--bg-gold-light);
+        }
+
+        .theme-plum-royal .corner {
+            border-radius: 50%;
+            background: transparent;
+            border: calc(2px * var(--scale)) solid var(--cert-primary);
+            transform: none;
+        }
+
+        .theme-plum-royal .corner::after {
+            display: none;
+        }
+
+        .theme-plum-royal .district-badge {
+            background: var(--cert-secondary);
+            color: var(--cert-primary);
+            border-radius: calc(20px * var(--scale));
+            border: none;
+        }
+
+        .theme-plum-royal .main-title {
+            background: transparent;
+            color: var(--cert-primary);
+            border-top: calc(1px * var(--scale)) solid var(--cert-primary);
+            border-bottom: calc(1px * var(--scale)) solid var(--cert-primary);
+            border-radius: 0;
+        }
+
+        .theme-plum-royal .cert-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            border: none;
+        }
+
+        .theme-plum-royal .cert-table td {
+            border: none;
+            border-bottom: calc(1px * var(--scale)) solid var(--cert-secondary);
+            background: transparent;
+        }
+
+        .theme-plum-royal .cert-table .td-label {
+            background: transparent;
+            color: var(--cert-primary);
+            border-left: calc(4px * var(--scale)) double var(--cert-primary);
+            border-right: none;
+        }
+
+        .theme-steel-blue {
+            --cert-primary: #334155;
+            --cert-secondary: #94a3b8;
+            --bg-gold-light: #f8fafc;
+            --pen-blue: #0f172a;
+        }
+
+        .theme-steel-blue .logo-green-group {
+            display: inline;
+        }
+
+        .theme-steel-blue .cert-border-outer {
+            border: calc(2px * var(--scale)) solid var(--cert-primary);
+            background: var(--bg-gold-light);
+            box-shadow: calc(8px * var(--scale)) calc(8px * var(--scale)) 0 var(--cert-secondary);
+        }
+
+        .theme-steel-blue .cert-border-inner {
+            border: none;
+            background: transparent;
+            border-left: calc(4px * var(--scale)) solid var(--cert-primary);
+        }
+
+        .theme-steel-blue .corner {
+            display: none;
+        }
+
+        .theme-steel-blue .district-badge {
+            background: var(--cert-primary);
+            color: white;
+            border-radius: 0;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .theme-steel-blue .main-title {
+            background: var(--paper-bg);
+            color: var(--cert-primary);
+            border: calc(2px * var(--scale)) solid var(--cert-primary);
+            border-radius: 0;
+        }
+
+        .theme-steel-blue .cert-table {
+            border: calc(2px * var(--scale)) solid var(--cert-primary);
+            border-collapse: collapse;
+        }
+
+        .theme-steel-blue .cert-table td {
+            border: calc(1px * var(--scale)) solid var(--cert-secondary);
+            background: var(--paper-bg);
+        }
+
+        .theme-steel-blue .cert-table .td-label {
+            background: var(--cert-primary);
+            color: white;
+            border-right: none;
+        }
+
+        .theme-forest-green {
+            --cert-primary: #15803d;
+            --cert-secondary: #86efac;
+            --bg-gold-light: #f0fdf4;
+            --pen-blue: #14532d;
+        }
+
+        .theme-forest-green .logo-classic-group {
+            display: inline;
+        }
+
+        .theme-forest-green .cert-border-outer {
+            border: calc(6px * var(--scale)) solid var(--cert-primary);
+            border-radius: calc(20px * var(--scale));
+            background: var(--paper-bg);
+            padding: calc(8px * var(--scale));
+        }
+
+        .theme-forest-green .cert-border-inner {
+            border: calc(2px * var(--scale)) solid var(--cert-secondary);
+            border-radius: calc(12px * var(--scale));
+            background: var(--bg-gold-light);
+        }
+
+        .theme-forest-green .corner {
+            display: none;
+        }
+
+        .theme-forest-green .district-badge {
+            background: transparent;
+            color: var(--cert-primary);
+            border-radius: calc(10px * var(--scale));
+            border: calc(2px * var(--scale)) dashed var(--cert-primary);
+        }
+
+        .theme-forest-green .main-title {
+            background: var(--cert-secondary);
+            color: var(--cert-primary);
+            border-radius: calc(15px * var(--scale));
+            border: calc(1px * var(--scale)) solid var(--cert-primary);
+        }
+
+        .theme-forest-green .cert-table {
+            border-collapse: collapse;
+            border: calc(2px * var(--scale)) solid var(--cert-primary);
+            border-radius: calc(10px * var(--scale));
+            overflow: hidden;
+        }
+
+        .theme-forest-green .cert-table td {
+            border: calc(1px * var(--scale)) solid var(--cert-secondary);
+            background: var(--paper-bg);
+        }
+
+        .theme-forest-green .cert-table .td-label {
+            background: var(--cert-secondary);
+            color: var(--cert-primary);
+            border-right: none;
+        }
+
+        .theme-rose-pink {
+            --cert-primary: #be185d;
+            --cert-secondary: #f9a8d4;
+            --bg-gold-light: #fdf2f8;
+            --pen-blue: #831843;
+        }
+
+        .theme-rose-pink .logo-heritage-group {
+            display: inline;
+        }
+
+        .theme-rose-pink .cert-border-outer {
+            border: calc(4px * var(--scale)) dotted var(--cert-primary);
+            padding: calc(10px * var(--scale));
+            background: var(--bg-gold-light);
+            box-shadow: inset 0 0 0 calc(2px * var(--scale)) var(--cert-primary);
+        }
+
+        .theme-rose-pink .cert-border-inner {
+            border: calc(1px * var(--scale)) solid var(--cert-primary);
+            background: var(--paper-bg);
+        }
+
+        .theme-rose-pink .corner {
+            width: calc(24px * var(--scale));
+            height: calc(24px * var(--scale));
+            border-radius: 0;
+            background: var(--cert-secondary);
+            border: calc(1px * var(--scale)) solid var(--cert-primary);
+            transform: none;
+        }
+
+        .theme-rose-pink .corner::after {
+            border-radius: 0;
+            width: 60%;
+            height: 60%;
+            background: var(--cert-primary);
+            border: none;
+        }
+
+        .theme-rose-pink .district-badge {
+            background: var(--cert-primary);
+            color: white;
+            border-radius: calc(5px * var(--scale));
+            border: none;
+        }
+
+        .theme-rose-pink .main-title {
+            background: transparent;
+            color: var(--cert-primary);
+            border-top: calc(2px * var(--scale)) dotted var(--cert-primary);
+            border-bottom: calc(2px * var(--scale)) dotted var(--cert-primary);
+            border-radius: 0;
+        }
+
+        .theme-rose-pink .cert-table {
+            border: collapse: separate;
+            border-spacing: 0 calc(2px * var(--scale));
+            border: none;
+        }
+
+        .theme-rose-pink .cert-table td {
+            border: none;
+            border-bottom: calc(1px * var(--scale)) dashed var(--cert-primary);
+            background: transparent;
+        }
+
+        .theme-rose-pink .cert-table .td-label {
+            background: var(--cert-secondary);
+            color: var(--cert-primary);
+            border-radius: 0 calc(10px * var(--scale)) calc(10px * var(--scale)) 0;
+            border-right: none;
+        }
+
+        /* ================= MOBILE RESPONSIVE ================= */
+        @media (max-width: 950px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-scroll-wrapper {
+                justify-content: flex-start;
+                padding: 20px;
+                border-radius: 0;
+            }
+
+            .scroll-hint {
+                display: inline-block;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding-top: 170px;
+            }
+
+            .top-header-banner {
+                padding: 30px 15px;
+            }
+
+            .top-header-banner h1 {
+                font-size: 30px;
+                line-height: 1.3;
+            }
+
+            .top-header-banner p {
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+
+            .app-container {
+                padding: 0;
+                gap: 0;
+            }
+
+            .ui-form {
+                padding: 30px 20px;
+                border-radius: 0;
+                box-shadow: none;
+                border-bottom: 2px solid var(--border-color);
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .header-line {
+                width: 100%;
+            }
+
+            .edit-btn-small {
+                align-self: flex-start;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .input-group label {
+                font-size: 26px;
+            }
+
+            .font-size-controls {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .font-size-controls .control-label {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+
+            .print-btn {
+                width: 100%;
+                justify-content: center;
+                font-size: 26px;
+                padding: 16px;
+                border-radius: 12px;
+            }
+
+            .split-inputs {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .date-group {
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "
+                day year"
+                "
+                month month"
+                ;
+                gap: 15px;
+            }
+
+            .date-group input:nth-child(1) {
+                grid-area: day;
+                width: 100%;
+            }
+
+            .date-group input:nth-child(2) {
+                grid-area: month;
+                width: 100%;
+            }
+
+            .date-group input:nth-child(3) {
+                grid-area: year;
+                width: 100%;
+            }
+
+            .form-section {
+                margin-bottom: 30px;
+            }
+
+            .seo-content {
+                padding: 20px;
+                margin-top: 30px;
+                border-radius: 0;
+            }
+
+            .step-actions {
+                flex-direction: column;
+            }
+
+            .action-btn {
+                width: 100%;
+            }
+
+            /* Modal Adjustments for mobile */
+            .chrome-notice-box {
+                padding: 20px;
+                width: 95%;
+                max-height: 90vh;
+            }
+
+            .chrome-notice-title {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .chrome-notice-content {
+                font-size: 16px;
+            }
+
+            .btn-understand {
+                font-size: 18px;
+                padding: 10px;
+                margin-top: 15px;
+            }
+        }
+
+        /* ================= PRINT STYLES ================= */
+        @media print {
+
+            html,
+            body {
+                background: #ffffff !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100% !important;
+                height: auto !important;
+                min-height: 0 !important;
+                overflow: visible !important;
+            }
+
+            .no-print,
+            .top-header-banner,
+            .ui-form,
+            .scroll-hint,
+            .seo-content,
+            .chrome-notice-overlay {
+                display: none !important;
+            }
+
+            .app-container,
+            .preview-section,
+            .cert-scroll-wrapper {
+                display: block !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
+                background: none !important;
+                width: 100% !important;
+                height: auto !important;
+                gap: 0 !important;
+                overflow: visible !important;
+            }
+
+            .cert-wrapper {
+                margin: 0 auto !important;
+                box-shadow: none !important;
+                page-break-after: avoid !important;
+                page-break-before: avoid !important;
+                page-break-inside: avoid !important;
+                overflow: hidden !important;
+            }
+
+            .size-a4 {
+                width: 210mm !important;
+                height: 296mm !important;
+                padding: 10mm !important;
+            }
+
+            .size-a3 {
+                width: 297mm !important;
+                height: 419mm !important;
+                padding: 14mm !important;
+            }
+
+            .editable-active,
+            .editable-value {
+                outline: none !important;
+                background-color: transparent !important;
+                padding: 0 !important;
+            }
+
+            .delete-row-btn {
+                display: none !important;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Glows -->
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- Custom Toast Notification -->
+    <div id="custom-toast" class="custom-toast">
+    </div>
+    <!-- CHROME NOTICE POPUP -->
+    <div id="chrome-notice-modal" class="chrome-notice-overlay no-print">
+        <div class="chrome-notice-box">
+            <h2 class="chrome-notice-title">
+                ⚠️ سرٽيفڪيٽ ٺاهيندڙن لاءِ اهم اطلاع
+            </h2>
+            <div class="chrome-notice-content">
+                <p style="margin-bottom: 10px;">
+                    موبائل تي سنڌي ۾ سرٽيفڪيٽ ٺاهڻ ۽ ڊائونلوڊ ڪرڻ لاءِ مهرباني ڪري
+                    <strong> Chrome Browser
+                    </strong>
+                    استعمال ڪريو.
+                </p>
+                <p style="color: #10b981; font-weight: bold; margin-top: 10px; margin-bottom: 5px;">
+                    جيڪڏهن توهان موبائل استعمال ڪندڙ آهيو:
+                </p>
+                <p style="margin-bottom: 5px;">
+                    هيٺ ڏنل لنڪ ڪاپي ڪريو ۽ Chrome Browser ۾ کوليو:
+                </p>
+                <div class="copy-link-box">
+                    <input type="text" id="modal-copy-link"
+                        value="https://learn4test.com/school/sindhi-leaving-certificate-maker.php" readonly="" />
+                    <button type="button" onclick="copyModalLink()">
+                        ڪاپي
+                    </button>
+                </div>
+                <p style="text-align: center; margin: 10px 0;">
+                    يا
+                </p>
+                <div style="text-align: center;">
+                    <a href="intent://learn4test.com/school/sindhi-leaving-certificate-maker.php#Intent;scheme=https;package=com.android.chrome;end"
+                        class="btn-chrome"> 🌐 Chrome ۾ کوليو
+                    </a>
+                </div>
+                <p style="font-size: 14px; margin-top: 8px; color: #64748b; text-align: center;">
+                    ان کان پوءِ جيڪو براؤزر چونڊڻ لاءِ آپشن اچي، ان مان Chrome Browser چونڊيو.
+                </p>
+                <div style="margin-top: 15px; padding-top: 10px; border-top: 2px dashed #cbd5e1;">
+                    <p style="color: #0f766e; font-weight: bold; margin-bottom: 5px;">
+                        ليپ ٽاپ يا ڪمپيوٽر استعمال ڪندڙن لاءِ:
+                    </p>
+                    <p>
+                        سڀئي براؤزر سپورٽ ٿيل آهن.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn-understand" onclick="dismissChromeNotice()">
+                    مون سمجهي ورتو
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="top-header-banner no-print">
+        <h1>
+            🎓 اسڪول چڏڻ جو سرٽيفڪيت
+        </h1>
+        <p>
+            سنڌي اسڪول ليونگ سرٽيفڪيٽ ميڪر - آن لائن PDF جنريٽر
+        </p>
+    </div>
+    <div class="app-container" id="main-app">
+        <div class="ui-form no-print">
+            <!-- STEP 1: SCHOOL DETAILS -->
+            <div id="step-1-school" class="form-section">
+                <div class="section-header">
+                    <h3 class="section-title">
+                        🏫 اسڪول جو تفصيل
+                    </h3>
+                    <div class="header-line">
+                    </div>
+                    <button class="edit-btn-small" id="btn-edit-school" style="display:none;"
+                        onclick="editSchoolDetails()">
+                        تبديلي ڪريو
+                    </button>
+                </div>
+                <div id="step-1-content" style="display:block;">
+                    <div class="form-grid">
+                        <div class="input-group full-width">
+                            <label>
+                                اسڪول جو پورو نالو
+                            </label>
+                            <input type="text" id="in-school-name" value="گورنمينٽ بوائز پرائمري اسڪول يار محمد منڱريو"
+                                maxlength="250" oninput="updateUI()" />
+                            <div class="font-size-controls">
+                                <span class="control-label"> فونٽ سائيز ڪنٽرول:
+                                </span>
+                                <button type="button" class="size-btn" onclick="adjustSchoolFontSize(4)">
+                                    +
+                                </button>
+                                <span id="school-font-size-display" class="size-display"> Auto
+                                </span>
+                                <button type="button" class="size-btn" onclick="adjustSchoolFontSize(-4)">
+                                    -
+                                </button>
+                                <button type="button" class="reset-btn" onclick="resetSchoolFontSize()">
+                                    فونٽ سائيز ري سيٽ ڪريو
+                                </button>
+                            </div>
+                        </div>
+                        <div class="input-group full-width">
+                            <label>
+                                پتو / هنڌ (مڪمل پتو)
+                            </label>
+                            <input type="text" id="in-subheader" value="يوسي سنڌڙي، تعلقہ سنڌڙي، ضلع ميرپور خاص"
+                                oninput="updateUI()" />
+                        </div>
+                        <div class="input-group">
+                            <label>
+                                لوگو مٿان متن
+                            </label>
+                            <input type="text" id="in-logo-top" value="YAR MOHAMMAD MANGRIO SINDHRI"
+                                class="ltr" oninput="updateUI()" />
+                        </div>
+                        <div class="input-group">
+                            <label>
+                                لوگو هيٺان متن
+                            </label>
+                            <input type="text" id="in-logo-bottom" value="G . B . P . S" class="ltr"
+                                oninput="updateUI()" />
+                        </div>
+                        <div class="input-group">
+                            <label>
+                                جنرل رجسٽر نمبر (G.R No)
+                            </label>
+                            <input type="text" id="in-gr" value="8452" class="ltr" oninput="updateUI()" />
+                        </div>
+                        <div class="input-group">
+                            <label>
+                                فارم نمبر (Form No)
+                            </label>
+                            <input type="text" id="in-form-no" value="16" class="ltr" oninput="updateUI()" />
+                        </div>
+                        <div class="input-group">
+                            <label>
+                                سيمس ڪوڊ (SEMIS Code)
+                            </label>
+                            <input type="text" id="in-semis" value="405050083" class="ltr" oninput="updateUI()" />
+                        </div>
+                        <div class="input-group">
+                            <label>
+                                ضلعو (District)
+                            </label>
+                            <input type="text" id="in-district" value="DISTRICT MIRPUR KHAS" class="ltr"
+                                oninput="updateUI()" />
+                        </div>
+                        <div class="input-group full-width">
+                            <label>
+                                توهان جي اسڪول ۾ هيڊ ڪير آهي؟ هيڊ جي صحي ڪرڻ لاءِ
+                            </label>
+                            <div style="display: flex; gap: 20px; width: 100%; flex-wrap: wrap;">
+                                <select id="in-designation-select" onchange="toggleCustomDesignation()"
+                                    style="flex: 1; min-width: 250px;">
+                                    <option value="دستخط هيڊ ماسٽر" selected="">
+                                        دستخط هيڊ ماسٽر
+                                    </option>
+                                    <option value="دستخط هيڊ مسٽريس">
+                                        دستخط هيڊ مسٽريس
+                                    </option>
+                                    <option value="دستخط هيڊ مسٽرس">
+                                        دستخط هيڊ مسٽرس
+                                    </option>
+                                    <option value="دستخط پرنسپل">
+                                        دستخط پرنسپل
+                                    </option>
+                                    <option value="custom">
+                                        پنهنجو لکو (Custom)
+                                    </option>
+                                </select>
+                                <input type="text" id="in-designation-custom" value="دستخط هيڊ ماسٽر"
+                                    style="display:none; flex: 1; min-width: 250px;" oninput="updateUI()"
+                                    placeholder="پنهنجو عهدو لکو" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-actions no-print">
+                        <button class="action-btn save-btn" onclick="saveSchoolDetails()">
+                            تبديليون محفوظ ڪريو
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- STEP 2: SETTINGS / CUSTOMIZE -->
+            <div id="step-2-settings" class="form-section">
+                <div class="section-header">
+                    <h3 class="section-title">
+                        ⚙️ سيٽنگون (Customize Certificate)
+                    </h3>
+                    <div class="header-line">
+                    </div>
+                    <button class="edit-btn-small" id="btn-edit-settings" style="display:block;"
+                        onclick="editSettings()">
+                        تبديلي ڪريو
+                    </button>
+                </div>
+                <div id="step-2-content" style="display:none;">
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>
+                                سرٽيفڪيٽ پيج سائيز (Page Size)
+                            </label>
+                            <select id="size-selector" onchange="changeSize()">
+                                <option value="a4" selected="">
+                                    A4 سائيز (معياري)
+                                </option>
+                                <option value="a3">
+                                    A3 سائيز (وڏو)
+                                </option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>
+                                سرٽيفڪيٽ ٿيم (Theme Colors & Layout)
+                            </label>
+                            <select id="theme-selector" onchange="changeTheme()">
+                                <option value="classic">
+                                    ڪلاسڪ ٿيم (Classic Maroon)
+                                </option>
+                                <option value="blue" selected="">
+                                    ماڊرن بليو (Blue Modern Layout)
+                                </option>
+                                <option value="green">
+                                    پروفيشنل ايمرالڊ (Emerald Minimalist)
+                                </option>
+                                <option value="premium">
+                                    پريميئم مڊنائٽ (Premium Midnight & Gold)
+                                </option>
+                                <option value="heritage">
+                                    هيريٽيج ٿيم (Royal Heritage Slate)
+                                </option>
+                                <option value="original-green">
+                                    اوريجنل گرين (Original Green)
+                                </option>
+                                <option value="royal-blue">
+                                    رائل بليو (Royal Blue)
+                                </option>
+                                <option value="regal-purple">
+                                    ريگل پرپل (Regal Purple)
+                                </option>
+                                <option value="ocean-teal">
+                                    اوشين ٽيل (Ocean Teal)
+                                </option>
+                                <option value="sapphire-blue">
+                                    سفائر بليو (Sapphire Blue)
+                                </option>
+                                <option value="amber-gold">
+                                    امبر گولڊ (Amber Gold)
+                                </option>
+                                <option value="plum-royal">
+                                    پلم رائل (Plum Royal)
+                                </option>
+                                <option value="steel-blue">
+                                    اسٽيل بليو (Steel Blue)
+                                </option>
+                                <option value="forest-green">
+                                    فاريسٽ گرين (Forest Green)
+                                </option>
+                                <option value="rose-pink">
+                                    روز پنڪ (Rose Pink)
+                                </option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>
+                                سرٽيفڪيٽ جو فونٽ (Certificate Font)
+                            </label>
+                            <select id="font-selector" onchange="changeFont()">
+                                <option value="'Lateef', serif" selected="">Lateef (Standard Sindhi)</option>
+                                <option value="'Noto Nastaliq Urdu', serif">Noto Nastaliq Urdu (Beautiful Urdu)</option>
+                                <option value="'Gulzar', serif">Gulzar (Nastaliq Style)</option>
+                                <option value="'Scheherazade New', serif">Scheherazade New (Traditional Sindhi)</option>
+                                <option value="'Amiri', serif">Amiri (Classic Style)</option>
+                                <option value="'Noto Sans Arabic', sans-serif">Noto Sans Arabic (Modern)</option>
+                            </select>
+                        </div>
+                        <div class="input-group full-width" style="margin-top: 15px;">
+                            <label
+                                style="flex-direction: row; align-items: center; cursor: pointer; background: #f8fafc; padding: 20px; border-radius: 14px; border: 2px dashed #94a3b8; font-size: 24px; color: #1e293b; font-weight: bold; transition: 0.2s;"
+                                onmouseover="this.style.borderColor='#3b82f6'"
+                                onmouseout="this.style.borderColor='#94a3b8'">
+                                <input type="checkbox" id="setting-form-no" onchange="updateUI()"
+                                    style="width: 28px; height: 28px; min-height: auto; margin-left: 15px; cursor: pointer; accent-color: #10b981;" />
+                                سرٽيفڪيٽ تي فارم نمبر ڏيکاريو (Show Form Number)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="step-actions no-print">
+                        <button class="action-btn save-btn" onclick="saveSettings()">
+                            تبديليون محفوظ ڪريو
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- STEP 3A: STUDENT DETAILS -->
+            <div id="step-3a-student" class="form-section">
+                <div class="section-header">
+                    <h3 class="section-title">
+                        👨‍🎓 شاگرد جو تفصيل
+                    </h3>
+                    <div class="header-line">
+                    </div>
+                    <button class="edit-btn-small" id="btn-edit-student" style="display:block;"
+                        onclick="editStudentDetails()">
+                        تبديلي ڪريو
+                    </button>
+                </div>
+                <div id="step-3a-content" style="display:none;">
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>
+                                شاگرد:
+                            </label>
+                            <select id="in-gender" onchange="updateGenderLabel()">
+                                <option value="boy" selected="">
+                                    ڇوڪرو
+                                </option>
+                                <option value="girl">
+                                    ڇوڪري
+                                </option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label id="label-student-name">
+                                1. شاگرد جو پورو نالو
+                            </label>
+                            <input type="text" id="in-name" value="علي رضا" oninput="updateUI()" />
+                        </div>
+                        <div class="input-group">
+                            <label>
+                                2. پيءُ جو نالو
+                            </label>
+                            <input type="text" id="in-fname" value="مير دوست" oninput="updateUI()" />
+                        </div>
+                        <div class="input-group full-width">
+                            <label>
+                                3. ذات، مذهب
+                            </label>
+                            <div class="split-inputs">
+                                <input type="text" id="in-caste" value="منڱريو" oninput="updateUI()" placeholder="ذات" />
+                                <input type="text" id="in-religion" value="مسلمان" oninput="updateUI()"
+                                    placeholder="مذهب" />
+                            </div>
+                        </div>
+                        <div class="input-group full-width">
+                            <label>
+                                6. ڄم جو هنڌ
+                            </label>
+                            <input type="text" id="in-birthplace" value="حآجي حمير خان منڱريو" oninput="updateUI()" />
+                        </div>
+                    </div>
+                    <div class="step-actions no-print">
+                        <button class="action-btn save-btn" onclick="saveStudentDetails()">
+                            تبديليون محفوظ ڪريو
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- STEP 3B: DATES & ACADEMICS -->
+            <div id="step-3b-dates" class="form-section">
+                <div class="section-header">
+                    <h3 class="section-title">
+                        📅 تاريخون ۽ تعليمي تفصيل
+                    </h3>
+                    <div class="header-line">
+                    </div>
+                    <button class="edit-btn-small" id="btn-edit-dates" style="display:block;"
+                        onclick="editDatesDetails()">
+                        تبديلي ڪريو
+                    </button>
+                </div>
+                <div id="step-3b-content" style="display:none;">
+                    <div class="form-grid">
+                        <div class="input-group full-width">
+                            <label>
+                                4. ڄم جي تاريخ (انگن ۾)
+                            </label>
+                            <div class="date-group">
+                                <input type="number" id="in-dob-day" value="12" min="1" max="31" oninput="updateUI()" />
+                                <input type="number" id="in-dob-month" value="2" min="1" max="12"
+                                    oninput="updateUI()" />
+                                <input type="number" id="in-dob-year" value="2018" min="1900" max="2100"
+                                    oninput="updateUI()" />
+                            </div>
+                        </div>
+                        <div class="input-group full-width">
+                            <label>
+                                5. ڄم جي تاريخ (اکرن ۾)
+                            </label>
+                            <input type="text" id="in-dob-words" value="ٻارهين فيبروري ٻہ هزار ارڙهن"
+                                oninput="updateUI()" />
+                        </div>
+                        <div class="input-group full-width">
+                            <label>
+                                7. داخلا جي تاريخ
+                            </label>
+                            <div class="date-group">
+                                <input type="number" id="in-adm-day" value="15" min="1" max="31" oninput="updateUI()" />
+                                <input type="number" id="in-adm-month" value="4" min="1" max="12"
+                                    oninput="updateUI()" />
+                                <input type="number" id="in-adm-year" value="2025" min="1990" max="2100"
+                                    oninput="updateUI()" />
+                            </div>
+                        </div>
+                        <div class="input-group full-width">
+                            <label>
+                                11. اسڪول ڇڏڻ جي تاريخ
+                            </label>
+                            <div class="date-group">
+                                <input type="number" id="in-leave-day" value="10" min="1" max="31"
+                                    oninput="updateUI()" />
+                                <input type="number" id="in-leave-month" value="3" min="1" max="12"
+                                    oninput="updateUI()" />
+                                <input type="number" id="in-leave-year" value="2026" min="1990" max="2100"
+                                    oninput="updateUI()" />
+                            </div>
+                        </div>
+                        <div class="input-group full-width">
+                            <label>
+                                8. موجوده / پاس ڪيل ڪلاس
+                            </label>
+                            <input type="text" id="in-class" value="پنجون پاس" oninput="updateUI()" />
+                        </div>
+                        <div class="input-group full-width">
+                            <label>
+                                9. قابليت / 10. سيرت
+                            </label>
+                            <div class="split-inputs">
+                                <input type="text" id="in-capability" value="چڱو" oninput="updateUI()"
+                                    placeholder="قابليت" />
+                                <input type="text" id="in-character" value="چڱي" oninput="updateUI()"
+                                    placeholder="سيرت" />
+                            </div>
+                        </div>
+                        <div class="input-group full-width">
+                            <label>
+                                12. اسڪول ڇڏڻ جو سبب
+                            </label>
+                            <input type="text" id="in-reason" value="پنجون پاس" oninput="updateUI()" />
+                        </div>
+                    </div>
+                    <div class="step-actions no-print">
+                        <button class="action-btn save-btn" onclick="saveDatesDetails()">
+                            تبديليون محفوظ ڪريو
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- STEP 4: DOWNLOAD & ADVANCED -->
+            <div id="step-4-download" style="display:block;">
+                <div class="form-footer">
+                    <!-- Simple Download Button -->
+                    <button class="print-btn" id="download-btn" onclick="downloadCertificate()">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 6 2 18 2 18 9">
+                            </polyline>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2">
+                            </path>
+                            <rect x="6" y="14" width="12" height="8">
+                            </rect>
+                        </svg>
+                        سرٽيفڪيٽ ڊائونلوڊ ڪريو
+                    </button>
+                    
+                    <div class="download-stats no-print">
+                        <p>ڪل ڊائونلوڊ:</p>
+                        <span id="downloadCount" class="count-num">0</span>
+                    </div>
+                </div>
+                <!-- ADVANCED CONTROLS -->
+                <div class="form-section advanced-controls"
+                    style="margin-top: 50px; padding-top: 40px; border-top: 2px dashed #cbd5e1;">
+                    <div class="section-header" style="justify-content: center; margin-bottom: 10px;">
+                        <h3 class="section-title" style="margin: 0; color: #3b82f6;">
+                            🛠️ سرٽيفڪيٽ ۾ وڌيڪ تبديليون
+                        </h3>
+                    </div>
+                    <p
+                        style="text-align: center; color: #64748b; font-family: var(--font-sindhi); margin-bottom: 25px; font-size: 20px;">
+                        توهان سرٽيفڪيٽ تي ليبل ۽ ڊيٽا کي سڌو سنئون تبديل ڪري سگهو ٿا يا واڌو خانا (13، 14...) شامل ڪري سگهو ٿا. سرٽيفڪيٽ جو لي آئوٽ پاڻمرادي طور تي 16 خانن تائين هڪ صفحي تي سيٽ ٿي ويندو.
+                    </p>
+                    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                        <button class="action-btn edit-btn" id="btn-toggle-labels" onclick="toggleLabelEdit()">
+                            ✏️ سرٽيفڪيٽ جا ليبل تبديل ڪريو
+                        </button>
+                        <button class="action-btn" style="background: #10b981; color: white;" onclick="addCustomRow()">
+                            ➕ نئون خانو داخل ڪريو
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CERTIFICATE PREVIEW -->
+        <div class="preview-section no-print">
+            <div class="scroll-hint">
+                سرٽيفڪيٽ مڪمل ڏسڻ لاءِ کاٻي/ساڄي اسڪرول ڪريو
+            </div>
+            <div class="cert-scroll-wrapper">
+                <div class="cert-wrapper size-a4 classic" id="cert-box">
+                    <div class="cert-border-outer">
+                        <div class="corner corner-tl">
+                        </div>
+                        <div class="corner corner-tr">
+                        </div>
+                        <div class="corner corner-bl">
+                        </div>
+                        <div class="corner corner-br">
+                        </div>
+                        <div class="cert-border-inner">
+                            <div class="cert-content">
+                                <div class="top-section-bg">
+                                    <svg class="header-svg-container" viewBox="0 0 700 220">
+                                        <path id="text-curve" d="M -430,515 Q 350,-325 1130,515" fill="transparent">
+                                        </path>
+                                        <text id="school-name-text-node" style="font-family: var(--font-sindhi)"
+                                            font-size="83" font-weight="bold" fill="var(--cert-primary)">
+                                            <textPath href="#text-curve" startOffset="50%" text-anchor="middle"
+                                                id="out-school-name">
+                                                گورنمينٽ بوائز پرائمري اسڪول يار محمد منڱريو
+                                            </textPath>
+                                        </text>
+                                    </svg>
+                                    <div class="logo-area">
+                                        <div class="seal-outer">
+                                            <svg class="crest-vector-svg" viewBox="0 0 200 200">
+                                                <!-- CLASSIC LOGO GROUP -->
+                                                <g class="logo-classic-group">
+                                                    <circle cx="100" cy="100" r="96" fill="none"
+                                                        stroke="var(--cert-secondary)" stroke-width="4">
+                                                    </circle>
+                                                    <circle cx="100" cy="100" r="88" fill="none"
+                                                        stroke="var(--cert-primary)" stroke-width="2">
+                                                    </circle>
+                                                    <circle cx="100" cy="100" r="82" fill="none"
+                                                        stroke="var(--cert-primary)" stroke-width="0.75"
+                                                        stroke-dasharray="3,4">
+                                                    </circle>
+                                                    <circle cx="100" cy="100" r="62" fill="var(--bg-gold-light)"
+                                                        stroke="var(--cert-secondary)" stroke-width="1.5">
+                                                    </circle>
+                                                    <polygon points="23,100 27,95 31,100 27,105"
+                                                        fill="var(--cert-secondary)">
+                                                    </polygon>
+                                                    <polygon points="177,100 173,95 169,100 173,105"
+                                                        fill="var(--cert-secondary)">
+                                                    </polygon>
+                                                    <g transform="translate(100,95)">
+                                                        <path
+                                                            d="M-30,-35 L30,-35 L30,15 C30,35 0,50 0,50 C0,50 -30,35 -30,15 Z"
+                                                            fill="var(--cert-primary)" stroke="var(--cert-secondary)"
+                                                            stroke-width="3">
+                                                        </path>
+                                                        <path
+                                                            d="M-20,-20 L20,-20 M-15,-27 L15,-27 M-8,-32 L8,-32 M0,-20 L0,-35"
+                                                            stroke="var(--cert-secondary)" stroke-width="1.5">
+                                                        </path>
+                                                        <path d="M-22,-2 Q0,-12 22,-2 L22,16 Q0,6 -22,16 Z"
+                                                            fill="var(--paper-bg)">
+                                                        </path>
+                                                        <path d="M-18,1 Q0,-7 18,1 L18,13 Q0,5 -18,13 Z" fill="none"
+                                                            stroke="var(--cert-primary)" stroke-width="1.5">
+                                                        </path>
+                                                        <line x1="0" y1="-7" x2="0" y2="12" stroke="var(--cert-primary)"
+                                                            stroke-width="2">
+                                                        </line>
+                                                        <path d="M-4,-8 L4,-8 L2,-25 L-2,-25 Z"
+                                                            fill="var(--cert-secondary)">
+                                                        </path>
+                                                        <path d="M0,-25 Q-6,-34 0,-44 Q6,-34 0,-25 Z"
+                                                            fill="var(--paper-bg)">
+                                                        </path>
+                                                        <path d="M0,-28 Q-3,-35 0,-40 Q3,-35 0,-28 Z"
+                                                            fill="var(--cert-secondary)">
+                                                        </path>
+                                                        <path d="M-35,20 L35,20 L30,30 L-30,30 Z"
+                                                            fill="var(--cert-secondary)">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                                <!-- BLUE MODERN LOGO GROUP -->
+                                                <g class="logo-blue-group">
+                                                    <polygon
+                                                        points="100,4 168,32 196,100 168,168 100,196 32,168 4,100 32,32"
+                                                        fill="none" stroke="var(--cert-secondary)" stroke-width="4">
+                                                    </polygon>
+                                                    <polygon
+                                                        points="100,12 160,38 184,100 160,162 100,188 40,162 16,100 40,38"
+                                                        fill="var(--paper-bg)" stroke="var(--cert-primary)"
+                                                        stroke-width="2">
+                                                    </polygon>
+                                                    <circle cx="100" cy="100" r="58" fill="var(--bg-gold-light)"
+                                                        stroke="var(--cert-secondary)" stroke-width="2">
+                                                    </circle>
+                                                    <g transform="translate(100,98)">
+                                                        <polygon points="0,-35 25,-25 0,-15 -25,-25"
+                                                            fill="var(--cert-primary)">
+                                                        </polygon>
+                                                        <polygon points="-15,-21 -15,-10 0,-3 15,-10 15,-21"
+                                                            fill="var(--cert-primary)">
+                                                        </polygon>
+                                                        <line x1="22" y1="-24" x2="22" y2="-10"
+                                                            stroke="var(--cert-secondary)" stroke-width="2">
+                                                        </line>
+                                                        <path d="M -20 -5 L 0 2 L 20 -5 L 20 10 L 0 17 L -20 10 Z"
+                                                            fill="var(--cert-secondary)">
+                                                        </path>
+                                                    </g>
+                                                </g>
+                                                <!-- GREEN MINIMALIST LOGO GROUP -->
+                                                <g class="logo-green-group">
+                                                    <circle cx="100" cy="100" r="96" fill="none"
+                                                        stroke="var(--cert-primary)" stroke-width="2">
+                                                    </circle>
+                                                    <circle cx="100" cy="100" r="90" fill="none"
+                                                        stroke="var(--cert-secondary)" stroke-width="1.5">
+                                                    </circle>
+                                                    <circle cx="100" cy="100" r="85" fill="none"
+                                                        stroke="var(--cert-primary)" stroke-width="3"
+                                                        stroke-dasharray="2, 6">
+                                                    </circle>
+                                                    <circle cx="100" cy="100" r="55" fill="var(--paper-bg)"
+                                                        stroke="var(--cert-secondary)" stroke-width="1.5">
+                                                    </circle>
+                                                    <circle cx="100" cy="100" r="50" fill="var(--bg-gold-light)">
+                                                    </circle>
+                                                    <g stroke="var(--cert-secondary)" stroke-width="0.8" opacity="0.6">
+                                                        <circle cx="100" cy="100" r="45">
+                                                        </circle>
+                                                        <ellipse cx="100" cy="100" rx="15" ry="45">
+                                                        </ellipse>
+                                                        <ellipse cx="100" cy="100" rx="45" ry="15">
+                                                        </ellipse>
+                                                    </g>
+                                                    <path
+                                                        d="M 75,110 C 85,103 95,106 100,110 C 105,106 115,103 125,110 L 118,95 C 110,88 102,92 100,95 C 98,92 90,88 82,95 Z"
+                                                        fill="var(--cert-primary)">
+                                                    </path>
+                                                    <path
+                                                        d="M 77,108 C 85,103 95,106 100,110 L 100,95 C 98,92 90,88 82,95 Z"
+                                                        fill="var(--paper-bg)">
+                                                    </path>
+                                                    <path
+                                                        d="M 123,108 C 115,103 105,106 100,110 L 100,95 C 102,92 110,88 118,95 Z"
+                                                        fill="var(--paper-bg)">
+                                                    </path>
+                                                    <polygon points="98,95 102,95 104,75 96,75"
+                                                        fill="var(--cert-primary)">
+                                                    </polygon>
+                                                    <polygon points="94,75 106,75 106,72 94,72"
+                                                        fill="var(--cert-secondary)">
+                                                    </polygon>
+                                                    <path d="M 100,72 C 94,62 92,55 100,45 C 108,55 106,62 100,72 Z"
+                                                        fill="var(--cert-secondary)">
+                                                    </path>
+                                                    <path d="M 100,68 C 97,60 96,55 100,50 C 104,55 103,60 100,68 Z"
+                                                        fill="var(--paper-bg)">
+                                                    </path>
+                                                </g>
+                                                <!-- PREMIUM LOGO GROUP -->
+                                                <g class="logo-premium-group">
+                                                    <g fill="var(--cert-primary)">
+                                                        <rect x="60" y="60" width="80" height="80">
+                                                        </rect>
+                                                        <rect x="60" y="60" width="80" height="80"
+                                                            transform="rotate(22.5 100 100)">
+                                                        </rect>
+                                                        <rect x="60" y="60" width="80" height="80"
+                                                            transform="rotate(45 100 100)">
+                                                        </rect>
+                                                        <rect x="60" y="60" width="80" height="80"
+                                                            transform="rotate(67.5 100 100)">
+                                                        </rect>
+                                                    </g>
+                                                    <circle cx="100" cy="100" r="52" fill="var(--cert-secondary)"
+                                                        stroke="var(--paper-bg)" stroke-width="2">
+                                                    </circle>
+                                                    <circle cx="100" cy="100" r="46" fill="var(--bg-gold-light)">
+                                                    </circle>
+                                                    <rect x="90" y="65" width="20" height="4"
+                                                        fill="var(--cert-primary)">
+                                                    </rect>
+                                                    <polygon points="86,69 114,69 110,75 90,75"
+                                                        fill="var(--cert-primary)">
+                                                    </polygon>
+                                                    <rect x="92" y="75" width="4" height="25"
+                                                        fill="var(--cert-primary)">
+                                                    </rect>
+                                                    <rect x="104" y="75" width="4" height="25"
+                                                        fill="var(--cert-primary)">
+                                                    </rect>
+                                                    <polygon points="90,100 110,100 114,106 86,106"
+                                                        fill="var(--cert-primary)">
+                                                    </polygon>
+                                                    <rect x="82" y="106" width="36" height="4"
+                                                        fill="var(--cert-primary)">
+                                                    </rect>
+                                                    <polygon
+                                                        points="100,50 102,55 107,55 103,58 105,63 100,60 95,63 97,58 93,55 98,55"
+                                                        fill="var(--cert-primary)">
+                                                    </polygon>
+                                                    <polygon
+                                                        points="85,60 86,63 89,63 87,65 88,68 85,66 82,68 83,65 81,63 84,63"
+                                                        fill="var(--cert-primary)">
+                                                    </polygon>
+                                                    <polygon
+                                                        points="115,60 116,63 119,63 117,65 118,68 115,66 112,68 113,65 111,63 114,63"
+                                                        fill="var(--cert-primary)">
+                                                    </polygon>
+                                                </g>
+                                                <!-- HERITAGE LOGO GROUP -->
+                                                <g class="logo-heritage-group">
+                                                    <circle cx="100" cy="100" r="96" fill="none"
+                                                        stroke="var(--cert-primary)" stroke-width="3">
+                                                    </circle>
+                                                    <circle cx="100" cy="100" r="88" fill="none"
+                                                        stroke="var(--cert-secondary)" stroke-width="1.5"
+                                                        stroke-dasharray="6,4">
+                                                    </circle>
+                                                    <circle cx="100" cy="100" r="82" fill="none"
+                                                        stroke="var(--cert-primary)" stroke-width="1">
+                                                    </circle>
+                                                    <g
+                                                        transform="translate(100, 100) scale(0.65) translate(-100, -100)">
+                                                        <rect x="65" y="65" width="70" height="70"
+                                                            fill="var(--bg-gold-light)" stroke="var(--cert-secondary)"
+                                                            stroke-width="4">
+                                                        </rect>
+                                                        <rect x="65" y="65" width="70" height="70"
+                                                            fill="var(--bg-gold-light)" stroke="var(--cert-secondary)"
+                                                            stroke-width="4" transform="rotate(45 100 100)">
+                                                        </rect>
+                                                    </g>
+                                                    <circle cx="100" cy="100" r="32" fill="var(--paper-bg)"
+                                                        stroke="var(--cert-primary)" stroke-width="2">
+                                                    </circle>
+                                                    <path
+                                                        d="M 105,85 C 115,75 120,80 115,95 C 110,110 95,115 90,115 L 90,105 C 95,100 100,95 105,85 Z"
+                                                        fill="var(--cert-primary)">
+                                                    </path>
+                                                    <path d="M 90,115 L 85,120 L 80,115 L 90,105 Z"
+                                                        fill="var(--cert-secondary)">
+                                                    </path>
+                                                    <line x1="85" y1="120" x2="80" y2="125" stroke="var(--cert-primary)"
+                                                        stroke-width="2">
+                                                    </line>
+                                                    <circle cx="100" cy="55" r="3" fill="var(--cert-secondary)">
+                                                    </circle>
+                                                    <circle cx="100" cy="145" r="3" fill="var(--cert-secondary)">
+                                                    </circle>
+                                                    <circle cx="55" cy="100" r="3" fill="var(--cert-secondary)">
+                                                    </circle>
+                                                    <circle cx="145" cy="100" r="3" fill="var(--cert-secondary)">
+                                                    </circle>
+                                                </g>
+                                                <!-- SHARED LOGO TEXT -->
+                                                <path id="arc-top-pro" d="M 32,100 A 68,68 0 1,1 168,100"
+                                                    fill="transparent">
+                                                </path>
+                                                <text font-family="Arial,sans-serif" font-size="11" font-weight="bold"
+                                                    fill="var(--cert-primary)">
+                                                    <textPath href="#arc-top-pro" startOffset="50%" text-anchor="middle"
+                                                        id="out-logo-top" textLength="190"
+                                                        lengthAdjust="spacingAndGlyphs">
+                                                        YAR MOHAMMAD MANGRIO SINDHRI
+                                                    </textPath>
+                                                </text>
+                                                <path id="arc-bot-pro" d="M 168,100 A 68,68 0 0,1 32,100"
+                                                    fill="transparent">
+                                                </path>
+                                                <text font-family="Arial,sans-serif" font-size="16" font-weight="bold"
+                                                    fill="var(--cert-primary)">
+                                                    <textPath href="#arc-bot-pro" startOffset="50%" text-anchor="middle"
+                                                        id="out-logo-bottom">
+                                                        G . B . P . S
+                                                    </textPath>
+                                                </text>
+                                                <text x="100" y="123" font-family="Arial,sans-serif" font-size="8"
+                                                    font-weight="bold" fill="var(--cert-primary)" text-anchor="middle"
+                                                    id="out-dynamic-year">
+                                                    YEAR 2026
+                                                </text>
+                                            </svg>
+                                        </div>
+                                        <div class="district-badge">
+                                            <span id="out-district"> DISTRICT MIRPUR KHAS
+                                            </span>
+                                            <span id="semis-wrapper"> |  SCHOOL SEMIS Code:
+                                                <span id="out-semis"> 405050083
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="sub-header editable-allowed" id="out-subheader">
+                                        يوسي سنڌڙي، تعلقہ سنڌڙي، ضلع ميرپور خاص
+                                    </div>
+                                    <div class="title-wrapper">
+                                        <div class="title-lines">
+                                        </div>
+                                        <div class="main-title editable-allowed">
+                                            اسڪول ڇڏڻ جو سرٽيفڪيٽ
+                                        </div>
+                                        <div class="title-lines">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gr-row">
+                                    <div class="gr-box">
+                                        <span class="editable-allowed"> جنرل رجسٽر نمبر
+                                        </span>
+                                        <div class="gr-line">
+                                            <span id="out-gr" class="editable-allowed"> 8452
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="gr-box" id="form-no-box"
+                                        style="display: none; justify-content: flex-end;">
+                                        <span class="editable-allowed"
+                                            style="white-space: nowrap; margin-left: calc(8px * var(--scale));"> فارم
+                                            نمبر:
+                                        </span>
+                                        <div class="gr-line form-no-line">
+                                            <span id="out-form-no" class="editable-allowed"> 16
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class="cert-table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="td-label" id="cert-label-name">
+                                                1. شاگرد جو پورو نالو
+                                            </td>
+                                            <td class="td-value">
+                                                <span class="handwritten" id="out-name"> علي رضا
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-label">
+                                                2. پيءُ جو نالو
+                                            </td>
+                                            <td class="td-value">
+                                                <span class="handwritten" id="out-fname"> مير دوست
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-label">
+                                                3. ذات، مذهب
+                                            </td>
+                                            <td class="td-value">
+                                                <div class="split-row">
+                                                    <span class="handwritten" id="out-caste"> منڱريو
+                                                    </span>
+                                                    <span class="handwritten"> ،
+                                                    </span>
+                                                    <span class="handwritten" id="out-religion"> مسلمان
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-label">
+                                                4. ڄم جي تاريخ (انگن ۾)
+                                            </td>
+                                            <td class="td-value">
+                                                <span class="handwritten date-wrapper" id="out-dob"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-label">
+                                                5. ڄم جي تاريخ (اکرن ۾)
+                                            </td>
+                                            <td class="td-value">
+                                                <span class="handwritten" id="out-dob-words"> ٻارهين فيبروري ٻہ هزار
+                                                    ارڙهن
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-label">
+                                                6. ڄم جو هنڌ
+                                            </td>
+                                            <td class="td-value">
+                                                <span class="handwritten" id="out-birthplace"> حآجي حمير خان منڱريو
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-label">
+                                                7. تاريخ داخلا
+                                            </td>
+                                            <td class="td-value">
+                                                <span class="handwritten date-wrapper" id="out-admission"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-label">
+                                                8. هن وقت ڪهڙي ڪلاس ۾
+                                            </td>
+                                            <td class="td-value">
+                                                <span class="handwritten" id="out-class"> پنجون پاس
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-label">
+                                                9. قابليت
+                                            </td>
+                                            <td class="td-value">
+                                                <span class="handwritten" id="out-capability"> چڱو
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-label">
+                                                10. سيرت
+                                            </td>
+                                            <td class="td-value">
+                                                <span class="handwritten" id="out-character"> چڱي
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-label">
+                                                11. اسڪول ڇڏڻ جي تاريخ
+                                            </td>
+                                            <td class="td-value">
+                                                <span class="handwritten date-wrapper" id="out-leaving"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-label">
+                                                12. اسڪول ڇڏڻ جو سبب
+                                            </td>
+                                            <td class="td-value">
+                                                <span class="handwritten" id="out-reason"> پنجون پاس
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="footer-banner editable-allowed">
+                                    نوٽ: مٿيون تفصيل رڪارڊ مطابق صحيح آهي
+                                </div>
+                                <div class="signatures-area">
+                                    <div class="sig-box-right">
+                                        <div class="sig-space">
+                                        </div>
+                                        <div class="sig-line-container">
+                                            <span class="editable-allowed"> تاريخ
+                                            </span>
+                                            <span class="line-blank"></span>
+                                        </div>
+                                    </div>
+                                    <div class="sig-box">
+                                        <div class="sig-space">
+                                        </div>
+                                        <div class="editable-allowed">
+                                            دستخط ڪلاس ٽيچر
+                                        </div>
+                                    </div>
+                                    <div class="sig-box">
+                                        <div class="sig-space">
+                                        </div>
+                                        <div id="out-head-designation" class="editable-allowed">
+                                            دستخط هيڊ ماسٽر
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        let customSchoolFontSize = null;
+        let labelsEditable = false;
+
+        function initApp() {
+            const currentYear = new Date().getFullYear();
+            const dynamicYearEl = document.getElementById('out-dynamic-year');
+            if (dynamicYearEl) dynamicYearEl.textContent = " YEAR " + currentYear;
+            updateGenderLabel();
+
+            // Load state from local storage first to pre-fill saved parts
+            loadFromStorage();
+
+            updateUI(); changeSize(); changeTheme(); changeFont();
+
+            // Check for Chrome Modal Notice
+            checkChromeNotice();
+        }
+
+        // ==========================================
+        // CHROME BROWSER NOTICE MODAL LOGIC
+        // ==========================================
+        function checkChromeNotice() {
+            const isDismissed = localStorage.getItem('chrome_notice_dismissed');
+            if (isDismissed !== 'true') {
+                document.getElementById('chrome-notice-modal').style.display = 'flex';
+                // Lock scrolling on background
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function dismissChromeNotice() {
+            localStorage.setItem('chrome_notice_dismissed', 'true');
+            document.getElementById('chrome-notice-modal').style.display = 'none';
+            // Unlock scrolling on background
+            document.body.style.overflow = 'auto';
+            showToast('معلومات محفوظ ڪئي وئي! ');
+        }
+
+        function copyModalLink() {
+            const copyText = document.getElementById('modal-copy-link');
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+            navigator.clipboard.writeText(copyText.value).then(() => {
+                showToast('لنڪ ڪاپي ٿي وئي! ');
+            });
+        }
+
+        // --- LOCAL STORAGE LOGIC FOR STEP-BY-STEP PROGRESS ---
+        function loadFromStorage() {
+            const schoolData = JSON.parse(localStorage.getItem('slc_school_details'));
+            if (schoolData) {
+                document.getElementById('in-school-name').value = schoolData.schoolName || '';
+                document.getElementById('in-subheader').value = schoolData.subheader || '';
+                document.getElementById('in-logo-top').value = schoolData.logoTop || '';
+                document.getElementById('in-logo-bottom').value = schoolData.logoBottom || '';
+                document.getElementById('in-gr').value = schoolData.gr || '';
+
+                const formNoEl = document.getElementById('in-form-no');
+                if (formNoEl) formNoEl.value = schoolData.formNo !== undefined ? schoolData.formNo : ' 16 ';
+
+                document.getElementById('in-semis').value = schoolData.semis || '';
+                document.getElementById('in-district').value = schoolData.district || '';
+                document.getElementById('in-designation-select').value = schoolData.designationSelect || 'دستخط هيڊ ماسٽر ';
+                document.getElementById('in-designation-custom').value = schoolData.designationCustom || '';
+                customSchoolFontSize = schoolData.fontSize || null;
+
+                toggleCustomDesignation();
+                saveSchoolDetails(true); // Lock it natively on load
+            }
+
+            const settingsData = JSON.parse(localStorage.getItem('slc_settings'));
+            if (settingsData) {
+                document.getElementById('size-selector').value = settingsData.size || 'a4';
+                document.getElementById('theme-selector').value = settingsData.theme || 'blue';
+                
+                const fontSelector = document.getElementById('font-selector');
+                if (fontSelector && settingsData.font) {
+                    fontSelector.value = settingsData.font;
+                    document.documentElement.style.setProperty('--font-choice', settingsData.font);
+                }
+
+                const showFormNoEl = document.getElementById('setting-form-no');
+                if (showFormNoEl) showFormNoEl.checked = settingsData.showFormNo || false;
+
+                saveSettings(true); // Lock it natively on load
+            }
+        }
+
+        function saveSchoolDetails(isInit = false) {
+            if (!isInit) {
+                const data = {
+                    schoolName: document.getElementById('in-school-name').value,
+                    subheader: document.getElementById('in-subheader').value,
+                    logoTop: document.getElementById('in-logo-top').value,
+                    logoBottom: document.getElementById('in-logo-bottom').value,
+                    gr: document.getElementById('in-gr').value,
+                    formNo: document.getElementById('in-form-no').value,
+                    semis: document.getElementById('in-semis').value,
+                    district: document.getElementById('in-district').value,
+                    designationSelect: document.getElementById('in-designation-select').value,
+                    designationCustom: document.getElementById('in-designation-custom').value,
+                    fontSize: customSchoolFontSize
+                };
+                localStorage.setItem('slc_school_details', JSON.stringify(data));
+                showToast('اسڪول جو تفصيل ڪاميابي سان محفوظ ٿي ويو! ');
+            }
+
+            // Collapse Step 1
+            document.getElementById('step-1-content').style.display = 'none';
+            document.getElementById('btn-edit-school').style.display = 'block';
+        }
+
+        function editSchoolDetails() {
+            showToast('اسڪول جي تفصيل ۾ ترميم ڪريو.');
+            // Expand Step 1
+            document.getElementById('step-1-content').style.display = 'block';
+            document.getElementById('btn-edit-school').style.display = 'none';
+        }
+
+        function saveSettings(isInit = false) {
+            if (!isInit) {
+                const data = {
+                    size: document.getElementById('size-selector').value,
+                    theme: document.getElementById('theme-selector').value,
+                    font: document.getElementById('font-selector').value,
+                    showFormNo: document.getElementById('setting-form-no').checked
+                };
+                localStorage.setItem('slc_settings', JSON.stringify(data));
+                showToast('سيٽنگون ڪاميابي سان محفوظ ٿي ويون! ');
+            }
+
+        // Collapse Step 2
+        document.getElementById('step-2-content').style.display = 'none';
+        document.getElementById('btn-edit-settings').style.display = 'block';
+        }
+
+        function editSettings() {
+            showToast(' سيٽنگون ۾ ترميم ڪريو.');
+            // Expand Step 2
+            document.getElementById('step-2-content').style.display = 'block';
+            document.getElementById('btn-edit-settings').style.display = 'none';
+        }
+
+        function saveStudentDetails() {
+            showToast('شاگرد جو تفصيل ڪاميابي سان محفوظ ٿي ويو! ');
+            // Collapse Step 3A
+            document.getElementById('step-3a-content').style.display = 'none';
+            document.getElementById('btn-edit-student').style.display = 'block';
+        }
+
+        function editStudentDetails() {
+            showToast('شاگرد جي تفصيل ۾ ترميم ڪريو.');
+            // Expand Step 3A
+            document.getElementById('step-3a-content').style.display = 'block';
+            document.getElementById('btn-edit-student').style.display = 'none';
+        }
+
+        function saveDatesDetails() {
+            showToast('تاريخون ڪاميابي سان محفوظ ٿي ويون! ');
+            // Collapse Step 3B
+            document.getElementById('step-3b-content').style.display = 'none';
+            document.getElementById('btn-edit-dates').style.display = 'block';
+        }
+
+        function editDatesDetails() {
+            showToast(' تاريخن ۾ ترميم ڪريو.');
+            // Expand Step 3B
+            document.getElementById('step-3b-content').style.display = 'block';
+            document.getElementById('btn-edit-dates').style.display = 'none';
+        }
+
+        function changeSize() {
+            const size = document.getElementById('size-selector').value;
+            const certBox = document.getElementById('cert-box');
+            certBox.classList.remove('size-a4 ', ' size-a3');
+            certBox.classList.add('size-' + size);
+
+            let styleEl = document.getElementById('print-page-size');
+            if (!styleEl) { styleEl = document.createElement(' style '); styleEl.id = ' print - page - size '; document.head.appendChild(styleEl); }
+            if (size === 'a3') styleEl.innerHTML = " @media print { @page { size: A3 portrait!important; margin: 0!important; } }";
+            else styleEl.innerHTML = " @media print { @page { size: A4 portrait!important; margin: 0!important; } }";
+        }
+
+        function changeTheme() {
+            const theme = document.getElementById('theme-selector').value;
+            const certBox = document.getElementById('cert-box');
+            certBox.className = certBox.className.replace(/\btheme-[^ ]*[ ]?\b/g, '');
+            if (theme !== 'classic') certBox.classList.add('theme-' + theme);
+
+            // Re-calculate the sizing rules because specific themes have unique overrides
+            adjustTableSizing();
+        }
+
+        function changeFont() {
+            const font = document.getElementById('font-selector').value;
+            document.documentElement.style.setProperty('--font-choice', font);
+            showToast('فونٽ ڪاميابي سان تبديل ٿي ويو!');
+        }
+
+        function adjustSchoolFontSize(amount) {
+            customSchoolFontSize = Math.min(250, Math.max(20, (customSchoolFontSize || 83) + amount));
+            updateUI();
+        }
+
+        function resetSchoolFontSize() { customSchoolFontSize = null; updateUI(); }
+
+        function toggleCustomDesignation() {
+            const selectEl = document.getElementById('in-designation-select');
+            const customEl = document.getElementById('in-designation-custom');
+            if (selectEl.value === 'custom') {
+                customEl.style.display = 'block';
+                customEl.focus();
+            } else {
+                customEl.style.display = 'none';
+            }
+            updateUI();
+        }
+
+        function updateGenderLabel() {
+            const gender = document.getElementById('in-gender').value;
+            const uiLabel = document.getElementById('label-student-name');
+            const certLabel = document.getElementById('cert-label-name');
+
+            if (gender === 'girl') {
+                if (uiLabel) uiLabel.innerText = " 1. شاگردياڻي جو پورو نالو ";
+                if (certLabel) certLabel.innerText = " 1. شاگردياڻي جو پورو نالو ";
+            } else {
+                if (uiLabel) uiLabel.innerText = " 1. شاگرد جو پورو نالو ";
+                if (certLabel) certLabel.innerText = " 1. شاگرد جو پورو نالو ";
+            }
+        }
+
+        function updateUI() {
+            const fields = ['school-name','subheader','logo-top','logo-bottom','gr','form-no','district','name','fname','caste','religion','dob-words','birthplace','class','capability','character','reason'];
+            fields.forEach(field => {
+                const inputEl = document.getElementById('in-' + field);
+                let outEl = document.getElementById('out-' + field);
+                if (inputEl && outEl) {
+                    if (outEl.tagName?.toLowerCase() === 'textpath') {
+                        let clone = outEl.cloneNode(false); clone.textContent = inputEl.value;
+                        if (field === 'school-name') {
+                            let newFontSize = customSchoolFontSize || 83;
+                            let displayEl = document.getElementById('school-font-size-display');
+                            if (displayEl) displayEl.innerText = customSchoolFontSize ? newFontSize + 'px' : 'Auto';
+                            let svgTextParent = document.getElementById('school-name-text-node');
+                            if (svgTextParent) svgTextParent.setAttribute('font-size', newFontSize);
+                            clone.removeAttribute('textLength'); clone.removeAttribute('lengthAdjust');
+                        }
+                        outEl.parentNode.replaceChild(clone, outEl);
+                    } else { outEl.textContent = inputEl.value; }
+                }
+            });
+            
+            const semisInput = document.getElementById('in-semis'), 
+                  semisWrapper = document.getElementById('semis-wrapper'), 
+                  outSemis = document.getElementById('out-semis');
+            if (semisInput && semisInput.value.trim() !== "") { 
+                outSemis.textContent = semisInput.value; 
+                semisWrapper.style.display = "inline"; 
+            } else if (semisWrapper) {
+                semisWrapper.style.display = "none";
+            }
+
+            ['dob','adm','leave'].forEach(d => {
+                const dayInput = document.getElementById(`in-${d}-day`);
+                const monthInput = document.getElementById(`in-${d}-month`);
+                const yearInput = document.getElementById(`in-${d}-year`);
+                
+                if (dayInput && monthInput && yearInput) {
+                    const day = dayInput.value;
+                    const month = monthInput.value;
+                    const year = yearInput.value;
+                    
+                    const outId = d === 'adm' ? 'out-admission' : (d === 'leave' ? 'out-leaving' : 'out-dob');
+                    const outEl = document.getElementById(outId);
+                    
+                    if(outEl) {
+                        const padDay = day.toString().padStart(2, '0');
+                        const padMonth = month.toString().padStart(2, '0');
+                        outEl.innerHTML = `<span class="digit" dir="ltr">${padDay}-${padMonth}-${year}</span>`;
+                    }
+                }
+            });
+
+        // Designation logic
+        const desigSelect = document.getElementById('in-designation-select');
+        const desigCustom = document.getElementById('in-designation-custom');
+        const outDesig = document.getElementById('out-head-designation');
+        if (desigSelect && outDesig) {
+            outDesig.textContent = (desigSelect.value === 'custom') ?desigCustom.value : desigSelect.value;
+        }
+
+        // Form No Toggle Logic
+        const showFormNo = document.getElementById('setting-form-no').checked;
+        const formNoBox = document.getElementById('form-no-box');
+        if (formNoBox) {
+            formNoBox.style.display = showFormNo ? 'flex' : 'none';
+        }
+        }
+
+        // ==========================================
+        // TOAST NOTIFICATION FUNCTION
+        // ==========================================
+        function showToast(message) {
+            const toast = document.getElementById('custom-toast');
+            toast.innerText = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // ==========================================
+        // ADVANCED CUSTOMIZATION (LABELS & CUSTOM ROWS)
+        // ==========================================
+        function toggleLabelEdit() {
+            labelsEditable = !labelsEditable;
+
+            if (labelsEditable) {
+                // If it wasn't triggered by startLabelEditing, show toast
+                if (document.getElementById('btn-toggle-labels').innerHTML.includes(' سرٽيفڪيٽ جا ليبل تبديل ڪريو ')) {
+                    showToast('اکرن جي تبديلي چالو ڪئي وئي آهي! ');
+                }
+            } else {
+                showToast('اکرن جي تبديلي بند ڪئي وئي آهي! ');
+            }
+
+            // 1. Toggle expressly permitted general elements below District line
+            const editableAllowed = document.querySelectorAll('.editable-allowed');
+            editableAllowed.forEach(el => {
+                el.contentEditable = labelsEditable;
+                if (labelsEditable) {
+                    el.classList.add('editable-active');
+                } else {
+                    el.classList.remove('editable-active');
+                }
+            });
+
+            // 2. Toggle standard labels (1 to 12) + any added row labels
+            const labels = document.querySelectorAll('.cert-table .td-label');
+            labels.forEach(lbl => {
+                lbl.contentEditable = labelsEditable;
+                if (labelsEditable) {
+                    lbl.classList.add('editable-active');
+                } else {
+                    lbl.classList.remove('editable-active');
+                }
+            });
+
+            // 3. Toggle standard values (1 to 12)
+            const standardValues = document.querySelectorAll('.cert-table .td-value .handwritten:not(.custom-value-span)');
+            standardValues.forEach(val => {
+                val.contentEditable = labelsEditable;
+                if (labelsEditable) {
+                    val.classList.add('editable-value');
+                } else {
+                    val.classList.remove('editable-value');
+                }
+            });
+
+            // 4. Toggle Custom added values and delete buttons
+            const customValues = document.querySelectorAll('.cert-table .custom-value-span');
+            const deleteBtns = document.querySelectorAll('.cert-table .delete-row-btn');
+
+            customValues.forEach(val => {
+                val.contentEditable = labelsEditable;
+                if (labelsEditable) {
+                    val.classList.add('editable-value');
+                } else {
+                    val.classList.remove('editable-value');
+                }
+            });
+
+            deleteBtns.forEach(btn => {
+                btn.style.display = labelsEditable ? 'block' : 'none';
+            });
+
+            // 5. Update the trigger button UI
+            const btn = document.getElementById('btn-toggle-labels');
+            if (labelsEditable) {
+                btn.innerHTML = "💾 اکر تبديل ڪرڻ بند ڪريو ";
+                btn.classList.replace('edit-btn', 'save-btn');
+            } else {
+                btn.innerHTML = "✏️ سرٽيفڪيٽ جا ليبل تبديل ڪريو ";
+                btn.classList.replace('save-btn', 'edit-btn');
+
+                // Clear explicit edit styles from any accidentally lingering spans
+                document.querySelectorAll('.editable-active').forEach(el => el.classList.remove('editable-active'));
+                document.querySelectorAll('.editable-value').forEach(el => el.classList.remove('editable-value'));
+            }
+        }
+
+        function addCustomRow() {
+            const table = document.querySelector('.cert-table tbody') || document.querySelector('.cert-table');
+            const rowCount = table.querySelectorAll('tr').length + 1;
+
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td class="td-label ${labelsEditable ? 'editable-active' : ''
+        }" contenteditable="${labelsEditable}">
+                    ${rowCount}. نئون ليبل
+            </td>
+                <td class="td-value">
+                    <div class="split-row">
+                        <span class="handwritten custom-value-span ${labelsEditable ? 'editable-value' : ''}" contenteditable="${labelsEditable}">نئون تفصيل لکو </span>
+                        <button class="no-print delete-row-btn" onclick="removeRow(this)" title="Delete Row" style="display: ${labelsEditable ? 'block' : 'none'};">❌</button>
+                    </div>
+                </td>
+            `;
+            table.appendChild(tr);
+
+            // Show toast notification
+            showToast('سرٽيفڪيٽ ۾ نئين قطار (Row) ڪاميابي سان شامل ڪئي وئي آهي!');
+
+            adjustTableSizing();
+        }
+
+        function removeRow(btn) {
+            btn.closest('tr').remove();
+
+            // Re-number subsequent rows
+            const rows = document.querySelectorAll('.cert-table tr');
+            rows.forEach((row, index) => {
+                if (index >= 12) { // Only renumber custom rows (13+)
+                    const labelTd = row.querySelector('.td-label');
+                    if (labelTd) {
+                        const currentText = labelTd.innerText;
+                        const newText = currentText.replace(/^\d+\./, (index + 1) + '.');
+                        labelTd.innerText = newText;
+                    }
+                }
+            });
+
+            showToast('قطار (Row) ڊليٽ ڪئي وئي!');
+            adjustTableSizing();
+        }
+
+        function adjustTableSizing() {
+            const table = document.querySelector('.cert-table');
+            const certBox = document.getElementById('cert-box');
+            const count = table.querySelectorAll('tr').length;
+            const theme = document.getElementById('theme-selector').value;
+
+            let tableScale = 1;
+            let certPaddingY = 15;
+            let headerMt = 5;
+            let headerH = 130;
+            let logoMt = -45;
+            let subHeaderM = 5;
+            let grMb = 5;
+            let titleMb = 5;
+            let footerMt = 10;
+            let footerMb = 10;
+            let sigSpace = 30;
+
+            if (count <= 12) {
+                // defaults
+            } else if (count === 13) {
+                sigSpace = 20;
+                certPaddingY = 12;
+                footerMb = 8;
+            } else if (count === 14) {
+                sigSpace = 10;
+                footerMb = 5;
+                certPaddingY = 10;
+            } else if (count === 15) {
+                sigSpace = 0;
+                footerMb = 0;
+                footerMt = 5;
+                certPaddingY = 8;
+            } else if (count >= 16) {
+                headerMt = -15;
+                headerH = 105;
+                logoMt = -45;
+                subHeaderM = 2;
+                titleMb = 2;
+                grMb = 2;
+                sigSpace = 0;
+                footerMb = 0;
+                footerMt = 2;
+                certPaddingY = 5;
+
+                if (count > 16) {
+                    tableScale = 16 / count;
+
+                    if (count > 18) {
+                        tableScale = 15.5 / count;
+                        headerH = Math.max(40, 105 - (count - 18) * 8);
+                        logoMt = -45 - (count - 18) * 2;
+                        headerMt = -15 - (count - 18) * 3;
+                        certPaddingY = Math.max(1, 5 - (count - 18));
+                        subHeaderM = 0;
+                        titleMb = 0;
+                        grMb = 0;
+                        footerMt = 0;
+                    }
+                }
+            }
+
+            // --- SPECIFIC FIX FOR REGAL PURPLE (Preserve old behavior) ---
+            if (theme === 'regal-purple') {
+                if (count > 12) {
+                    tableScale = Math.min(tableScale, 12 / count);
+                    if (count >= 14) {
+                        certPaddingY = Math.max(2, 10 - (count - 14));
+                        headerMt = -15;
+                        headerH = Math.max(40, 110 - (count - 14) * 6);
+                        subHeaderM = 0;
+                        titleMb = 0;
+                        grMb = 0;
+                        sigSpace = 0;
+                        footerMt = 2;
+                        footerMb = 2;
+                    }
+                }
+            }
+
+            // --- SPECIFIC FIX FOR BLUE MODERN (Gentler scaling to prevent huge gap) ---
+            if (theme === 'blue') {
+                if (count > 12) {
+                    // Use a much gentler scale so the table height doesn't collapse
+                    tableScale = Math.min(tableScale, 14.5 / count);
+
+                    // Reduce the CSS border-spacing gap progressively instead of shrinking the whole table
+                    let blueGap = Math.max(0, 3 - (count - 12) * 0.75);
+                    certBox.style.setProperty('--blue-gap', blueGap + 'px');
+
+                    if (count >= 14) {
+                        certPaddingY = Math.max(2, 8 - (count - 14));
+                        headerMt = -10;
+                        headerH = Math.max(50, 110 - (count - 14) * 8);
+                        subHeaderM = 0;
+                        titleMb = 0;
+                        grMb = 0;
+                        sigSpace = 0;
+                        footerMt = 2;
+                        footerMb = 2;
+                    }
+                } else {
+                    // Reset back to normal 3px gap
+                    certBox.style.setProperty('--blue-gap', '3px');
+                }
+            }
+
+            // Apply CSS Variables dynamically based on row count calculations
+            certBox.style.setProperty('--cert-padding-y', certPaddingY + 'px');
+            certBox.style.setProperty('--header-mt', headerMt + 'px');
+            certBox.style.setProperty('--header-h', headerH + 'px');
+            certBox.style.setProperty('--logo-mt', logoMt + 'px');
+            certBox.style.setProperty('--sub-header-m', subHeaderM + 'px');
+            certBox.style.setProperty('--title-mb', titleMb + 'px');
+            certBox.style.setProperty('--gr-mb', grMb + 'px');
+            certBox.style.setProperty('--footer-mt', footerMt + 'px');
+            certBox.style.setProperty('--footer-mb', footerMb + 'px');
+            certBox.style.setProperty('--sig-space', sigSpace + 'px');
+            table.style.setProperty('--table-scale', tableScale);
+        }
+
+
+
+
+
+        function downloadCertificate() {
+            // Increase Download Counter
+            let count = parseInt(localStorage.getItem("downloadCounter") || 0);
+            count++;
+            localStorage.setItem("downloadCounter", count);
+            const countEl = document.getElementById('downloadCount');
+            if (countEl) countEl.innerText = count;
+
+            showToast('سرٽيفڪيٽ ڊائونلوڊ ٿي رهيو آهي...');
+            // Add a small delay so the toast can render before the browser pauses JS execution for the print dialog
+            setTimeout(() => {
+                window.print();
+            }, 600);
+        }
+
+        // Initialize App & Hook Handlers for Preventing Styling overrides inside contenteditable
+        window.addEventListener('DOMContentLoaded', () => {
+            initApp();
+            
+            // Sync Download Counter on Load
+            const count = localStorage.getItem("downloadCounter") || 0;
+            const countEl = document.getElementById('downloadCount');
+            if (countEl) countEl.innerText = count;
+
+            // Fix for pasting rich text (strips out weird fonts/colors/sizes that copy-paste causes)
+            document.addEventListener("paste", function(e) {
+                if (e.target.isContentEditable || e.target.closest('.editable-value, .editable-active')) {
+                    e.preventDefault();
+                    let text = (e.originalEvent || e).clipboardData.getData('text/plain');
+                    // Strip line breaks so users can't accidentally add massive multi-line rows
+                    text = text.replace(/[\r\n]+/g, ' ');
+                    document.execCommand('insertText', false, text);
+                }
+            });
+
+            // Prevent Enter key from breaking the table layout vertically
+            document.addEventListener('keydown', function(e) {
+                if (e.target.isContentEditable && e.key === 'Enter') {
+                    e.preventDefault();
+                    e.target.blur(); // Blur on Enter
+                }
+            });
+        });
+    </script>
+    <footer class="no-print" style="text-align: center; padding: 40px 20px; margin-top: 60px; background: #1e293b; color: #cbd5e1; border-top: 4px solid var(--cert-secondary); font-family: var(--font-ui);">
+        <p style="font-size: 16px; margin-bottom: 10px; letter-spacing: 0.5px; direction: ltr;">
+            © 2026 GBELS Yar Muhammad Mangrio. All Rights Reserved.
+        </p>
+        <p style="font-size: 14px; opacity: 0.8; direction: ltr;">
+            Powered & Developed by <span style="color: var(--cert-secondary); font-weight: bold;">Riaz Ali Mangrio</span>
+        </p>
+    </footer>
+</body>
+
+</html>
